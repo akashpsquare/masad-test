@@ -1,0 +1,113 @@
+.calendar_date_picker_container {
+    position: relative;
+    display: inline-block;
+}
+
+.calendar_date_picker_button {
+    cursor: pointer;
+}
+
+.calendar_date_picker {
+    display: none;
+    position: absolute;
+    margin-top: 1rem;
+    top: 100%;
+    transform: translateX(-50%);
+    left: 50%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05),
+        0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.06),
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background-color: white;
+}
+
+.calendar_date_picker_header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 0.8rem;
+    align-items: center;
+}
+
+.calendar_date_picker_grid {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(7, 2rem);
+    grid-auto-rows: 2rem;
+}
+
+.calendar_date_picker_grid>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.date_picker_grid_header {
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: #333;
+}
+
+.date_picker_grid_dates {
+    color: #555;
+}
+
+.date_picker_other_month_date {
+    color: #aaa;
+}
+
+.calendar_date_picker_grid_dates>.date {
+    cursor: pointer;
+    border-radius: 0.25rem;
+    border: none;
+    background: none;
+}
+
+.calendar_date_picker_grid_dates>*:hover {
+    background-color: hsl(200, 100%, 80%);
+    color: black;
+}
+
+.calendar_month_button {
+    background: rgb(180, 165, 165);
+    border: none;
+    cursor: pointer;
+
+}
+
+.calendar_month_button:hover {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 0.5rem;
+}
+
+.calendar_show {
+    display: block;
+}
+
+.calendar_date {
+    /* Just a utility class to help style selected buttons */
+}
+
+.calendar_selected {
+    background-color: hsl(200, 91%, 38%);
+    color: white;
+}
+
+.calendar_btn {
+    /* Optional: base styles if you have shared button styles */
+}
+
+.calendar_btn_primary {
+    /* Optional: primary button styles */
+}
+
+.calendar_prev_month_button {
+    border-radius: 50%;
+    padding: 5px;
+}
