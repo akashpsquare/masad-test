@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './CardWrapper.module.css';
-import { CardsProps } from '../ReusbleInterface/CardsInterface';
+import { CardsProps } from '../../ComponentsInterface/CardsInterface';
 
 const CardWrapper: FC<CardsProps> = ({
   children,

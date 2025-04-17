@@ -1,0 +1,49 @@
+.datacard_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .datacard_datahead_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  .datacard_datahead{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: bold;
+}
+  .datacard_count_value{
+    background: linear-gradient(163.28deg, #80291A 10%, #2B0E08 91.55%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+   width: 28px;
+   height: 28px;
+   color: rgb(255, 255, 255);
+    
+  }
+  .datacard_header_tag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #4B180F;
+    border-radius: 50px;
+    color: #4B180F;
+    padding: 0px 16px;
+  
+  }
+.datacard_tag{
+  padding: 4px 12px;
+  margin: 0;
+font-size: 12px;
+font-weight: bold;
+
+}

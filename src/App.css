@@ -2,5 +2,6 @@
 .customClass{
             width:400px;
             height: 262px;
-    margin: 4px;
+           overflow: hidden;
+           padding: 0px 16px 0px 16px;
 }

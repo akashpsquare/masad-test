@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { CardsProps } from '../ReusbleInterface/CardsInterface';
+import { CardsProps } from '../../ComponentsInterface/CardsInterface';
 import styles from './EmptyCard.module.css';
 
 const EmptyCard: FC<CardsProps> = ({ label, icon, iconSize }) => {
