@@ -1,32 +1,64 @@
-.empty_card {
+.datacard {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
   }
   
-  .card_wrapper {
+  .datacard_wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
+
+  .datacard_wrapper {
+    color: rgba(75, 24, 15, 1);
+    font-size: 16px;
+    z-index: 100;
+  }
   
-  .header {
+  .datacard_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .datacard_header_values{
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px;
+    justify-content: center;
+    gap: 10px;
     font-family: sans-serif;
     font-weight: bold;
   }
-  
-  .card_wrapper_label {
-    color: rgba(75, 24, 15, 1);
-    font-size: 16px;
+  .datacard_btn{
+  height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
   }
+  .datacard_cout_value{
+    background: linear-gradient(163.28deg, #80291A 10%, #2B0E08 91.55%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    padding: 8px;
+    color: rgb(255, 255, 255);
+    
+  }
+  .datacard_datahead{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: bold;
+    
+
+}
   
-  .grid {
+  .datacard_grid {
     flex: 1;
     overflow-y: auto;
     display: grid;
@@ -36,7 +68,7 @@
     scrollbar-width: none;
   }
   
-  .grid_item {
+  .datacard_grid_item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,12 +82,12 @@
     gap: 10px;
   }
   
-  .grid_item h4,
-  .grid_item p {
+  .datacard_grid_item h4,
+  .datacard_grid_item p {
     margin: 0;
   }
   
-  .emptycard_grid_item_value {
+  .datacard_grid_item_value {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,13 +97,10 @@
     border-radius: 30px;
   }
   
-  .grid_item:hover {
+  .datacard_grid_item:hover {
     box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
     scale: 1;
   }
   
-  .icon {
-    width: 18px;
-    height: 18px;
-  }
+
   

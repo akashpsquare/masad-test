@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <CardWrapper  customStyle="customClass"
-           children={<EmpatyCard label="Add Product" icon={<img src={PlusIcon} alt="ss"/>}/>}   />
+           children={<EmpatyCard label="Do Not Add" icon={<img src={PlusIcon} alt="ss"/>}/>}   />
 
 <CardWrapper  customStyle="customClass"
 children={<DataCard/>}
