@@ -1,0 +1,81 @@
+.tries_input_container {
+    position: relative;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.tries_input_wrapper {
+    position: relative;
+      z-index: 2;
+
+      border-radius: 50%;
+    /* background: linear-gradient(163.28deg, #80291A 10%, #2B0E08 91.55%); */
+}
+
+.tries_Input {
+    width: 100%;
+    padding: 25px 12px 10px 16px;
+    font-size: 16px;
+    border-radius: 16px;
+    background-color: #FFFFFF99 ; /* Dark background for input */
+    outline: none;
+    border: none;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    font-family: 'YourFontFamily', sans-serif;
+    /* Change border color on focus */
+
+}
+
+.label_input {
+    position: absolute;
+      top: 18px;
+      left: 16px;
+      color: #aaa;
+      font-size: 14px;
+      background-color: #FFFFFF99 60%; 
+      padding: 0 5px;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 2;
+}
+
+
+.tries_input_container:focus-within .label_input {
+    top: 8px;
+    left: 12px;
+    font-size: 12px;
+    color: rgb(31, 31, 31);
+  }
+  
+  /* Class to apply when there is data in the input */
+  .focused .label_input {
+    top: 8px;
+    left: 12px;
+    font-size: 12px;
+    color: rgb(31, 31, 31); /* Change label color on focus when input is not empty */
+  }
+  .tries_Input:focus {
+    border: none;
+    box-shadow: inset 0 5px 0 0 #80291A; /* Change border color on focus */
+  }
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    /* For Firefox */
+}
+
+
+  
+
+  
+
+    

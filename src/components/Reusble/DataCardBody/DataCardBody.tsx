@@ -1,24 +1,33 @@
 import React from 'react';
 import styles from './DataCardBody.module.css';
-import { CardBodyProp } from '../../ComponentsInterface/CardsInterface';
+import { CardProp } from '../../ComponentsInterface/CardsInterface';
 
+const DataCardBody: React.FC<CardProp> = ({ data, variant }) => {
+  console.log(data);
 
-
-
-
-
-const CardBody: React.FC<CardBodyProp> = ( {data} ) => {
-  console.log(data)
   return (
-    <div className={styles.datacard_grid}>
-      {data.map((data:any) => (
-        <div key={data.id} className={styles.datacard_grid_item}>
-          <h4>{data.name}</h4>
-          <p className={styles.datacard_grid_item_value}>{data.price}</p>
+    <>
+      {variant === 'service' && (
+        <div className={styles.datacard_service_heading}>
+
+         <p className={styles.datacard_description}>
+             Get periority Scheduling for service requists and maintainance visits 
+        </p>
+
         </div>
-      ))}
-    </div>
+     
+      )}
+
+      <div className={styles.datacard_grid}>
+        {data?.map((data: any) => (
+          <div key={data.id} className={styles.datacard_grid_item}>
+            <h4>{data.name}</h4>
+            <p className={styles.datacard_grid_item_value}>{data.price}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
-export default CardBody;
+export default DataCardBody;

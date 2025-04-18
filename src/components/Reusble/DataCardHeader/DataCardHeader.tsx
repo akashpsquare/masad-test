@@ -1,34 +1,33 @@
 import React from 'react';
 import styles from './DataCardHeader.module.css';
-import { CardHeaderProp } from '../../ComponentsInterface/CardsInterface';
-
-const DataCardHeader: React.FC<CardHeaderProp> = ({ label, count, icon, labelTag }) => {
-  const showDataHeadWrapper = icon || label || count !== undefined;
-  const showHeaderTag = !!labelTag;
+import { CardProp } from '../../ComponentsInterface/CardsInterface';
+const DataCardHeader: React.FC<CardProp> = ({ headerlabel, headercount, headericon, headerlabeltag }) => {
+  const showDataHeadWrapper = headericon || headerlabel || headercount !== undefined;
+  const showHeaderTag = !!headerlabeltag;
 
   return (
     <div className={styles.datacard_header}>
       {showDataHeadWrapper && (
         <div className={styles.datacard_datahead_wrapper}>
-          {icon && (
+          {headericon && (
             <span className={styles.datacard_icon}>
-              {typeof icon === 'string' ? (
-                <img src={icon} alt="icon" className={styles.datacard_icon_img} />
+              {typeof headericon === 'string' ? (
+                <img src={headericon} alt="icon" className={styles.datacard_icon_img} />
               ) : (
-                icon
+                headericon
               )}
             </span>
           )}
-          {label && <p className={styles.datacard_datahead}>{label}</p>}
-          {count !== undefined && (
-            <div className={styles.datacard_count_value}>{count}</div>
+          {headerlabel && <p className={styles.datacard_datahead}>{headerlabel}</p>}
+          {headercount !== undefined && (
+            <div className={styles.datacard_count_value}>{headercount}</div>
           )}
         </div>
       )}
 
       {showHeaderTag && (
         <div className={styles.datacard_header_tag}>
-          <p className={styles.datacard_tag}>{labelTag}</p>
+          <p className={styles.datacard_tag}>{headerlabeltag}</p>
         </div>
       )}
     </div>

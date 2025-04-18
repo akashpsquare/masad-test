@@ -1,0 +1,43 @@
+
+.card_customclass{
+    width:400px;
+    height: 262px;
+   padding: 16px;
+   
+}
+.card_class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    border-radius: 36px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.28);
+    color: white;
+    transition: 
+    border-color 0.3s ease-in-out,
+    background-color 0.4s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+
+.icon{
+
+    position: absolute;
+    top: 1px;
+    right: -2px;
+    background-color: #A80000;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 1;
+}
+/* Active background */
+.active {
+ 
+    border: 2px solid #A80000;
+  }
+  

@@ -1,0 +1,42 @@
+/* Button.css */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    color: white;
+    border-radius: 100px;
+    
+  }
+  
+  .btn.primary {
+    color: #f2e3e3;
+    border: 2.5px solid #B67064;
+    gap: 4px;
+    width: 108px;
+    background: linear-gradient(152.51deg, #762618 17.11%, #46170F 85.58%);
+    border-radius: 100px;
+  }
+  
+  .btn.secondary {
+    background-color: #ffffff;
+    border: 1.2px solid #762618 ;
+    color:#762618 ;
+    gap: 10px; 
+    width: 114px;
+    font-weight: bold;
+  }
+  
+  .icon {
+    display: flex;
+    margin-right: 8px; 
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  

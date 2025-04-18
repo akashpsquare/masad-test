@@ -1,25 +1,26 @@
 
 .datacard_grid {
     flex: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     gap: 12px;
     scrollbar-width: none;
     margin-top: 16px;
+    
   }
   
   .datacard_grid_item {
-    height: 64px;
     display: flex;
+    height: 64px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 16px;
-    padding: 0px 8px 0px 8px;
+    padding: 8px;
     transition: box-shadow 0.2s ease;
     color: black;
     gap: 6px;
@@ -44,4 +45,20 @@
   .datacard_grid_item:hover {
     box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
     scale: 1;
+  }
+
+  .datacard_service_heading{
+      margin: 16px 0px 12px 0px;
+      width: 368px;
+      height: 56px;
+      border-radius: 16px;
+      padding: 12px;
+      gap: 4px;
+      background: #FFFFFF99;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0%;
+
+
   }
