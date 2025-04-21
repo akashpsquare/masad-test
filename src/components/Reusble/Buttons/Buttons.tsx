@@ -16,7 +16,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({
   label,
   icon,
-  iconPosition = 'left',
+  iconPosition = 'right',
   iconSize = '16px',
   onClick,
   variant = 'primary',
@@ -27,13 +27,13 @@ const Button: React.FC<ButtonProps> = ({
     <button className={`${styles.btn} ${styles[variant]}`} onClick={onClick} style={{ width: dimensionW , height: dimensionH }}>
       {icon && iconPosition === 'left' && (
         <span className={`${styles.icon}`} style={{ fontSize: iconSize }}>
-          {icon}
+          {typeof icon === 'string' && <img src={icon} />}
         </span>
       )}
       <span>{label}</span>
       {icon && iconPosition === 'right' && (
         <span className={`${styles.icon}`} style={{ fontSize: iconSize }}>
-          {icon}
+         {typeof icon === 'string' && <img src={icon} />}
         </span>
       )}
     </button>

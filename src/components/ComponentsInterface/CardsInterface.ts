@@ -19,7 +19,6 @@ export interface CardProp{
     price: number,
   }[];
   variant?:string,
-
   headerlabel?: string;
   headericon?: ReactNode;
   headerlabeltag?: string;
@@ -38,10 +37,3 @@ export interface InputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
-
-// export interface CardHeaderProp{
-//   label: string;
-//   icon: ReactNode;
-//   labelTag: string;
-//   count?: number;
-// }

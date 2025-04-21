@@ -9,7 +9,6 @@ const DataCardBody: React.FC<CardProp> = ({ data, variant }) => {
     <>
       {variant === 'service' && (
         <div className={styles.datacard_service_heading}>
-
          <p className={styles.datacard_description}>
              Get periority Scheduling for service requists and maintainance visits 
         </p>
