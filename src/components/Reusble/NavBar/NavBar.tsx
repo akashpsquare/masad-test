@@ -20,7 +20,7 @@ const NavBar = () => {
       <div className={styles.navbar_center}>
         <ul className={styles.navbar_links}>
           {["Products", "Sparepart", "Membership", "Designation", "Service", "Interiors", "Resource"].map((item, index) => (
-            <li key={index}>
+            <li className={styles.navbar_list} key={index}>
               <a
                 href={`#${item.toLowerCase()}`}
                 className={activeLink === item ? styles.active : ""}

@@ -3,16 +3,16 @@
     width:400px;
     height: 262px;
    padding: 16px;
-   
 }
 .card_class{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 6px;
     flex-direction: column; 
+    padding-bottom: 10px;
     border-radius: 36px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    gap: 6px;
     background: rgba(255, 255, 255, 0.28);
     color: white;
     transition: 
@@ -22,9 +22,7 @@
     position: relative;
 }
 
-
 .icon{
-
     position: absolute;
     top: 1px;
     right: -2px;
@@ -35,9 +33,8 @@
     font-size: 12px;
     line-height: 1;
 }
-/* Active background */
+
 .active {
- 
     border: 2px solid #A80000;
   }
   

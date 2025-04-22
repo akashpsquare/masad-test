@@ -13,12 +13,13 @@ headercount,
 headerlabel,
 
 
+
 }) => {
   return (
     <div className={styles.datacard}>
       <div className={styles.datacard_wrapper}>
-         <DataCardHeader  headercount={headercount} headericon={PlugIcon} headerlabeltag={headerlabeltag} headerlabel={headerlabel}  />
-         <DataCardBody variant={"servie"} data={data}/>
+         <DataCardHeader variant='product' headercount={headercount} headertitle='Add' headericon={PlugIcon} headerlabeltag={headerlabeltag} headerlabel={headerlabel}  />
+         <DataCardBody variant="product" data={data}/>
       </div>
     </div>
   );

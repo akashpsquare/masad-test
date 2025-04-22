@@ -15,7 +15,7 @@ export const Story = {
     label: "Hydrolic lift",
     icon: 'fa',
     labelTag: 'faaa',
-    // count: 7,
+   
   },
 };
 

@@ -31,8 +31,8 @@ const Card = () => {
       }`}
       onClick={() => setIsActive(!isActive)} // toggle active on click
     >
-      <DataCard data={products} headerlabeltag={labeltag} headercount={count} headerlabel={label} />
       
+      <DataCard data={products} headerlabeltag={labeltag} headercount={count} headerlabel={label} />
       {isActive && <span className={styles.icon}>✔</span>}
     </div>
   );

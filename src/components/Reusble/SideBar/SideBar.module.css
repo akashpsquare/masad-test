@@ -16,6 +16,11 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
+.sidebar ul:last-child {
+
+    color: red;
+
+  }
 .sidebar li a {
     text-decoration: none;
     color: #000;

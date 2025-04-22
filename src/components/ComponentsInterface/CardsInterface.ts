@@ -11,9 +11,22 @@ export interface EmptyCardProp{
   label: string;
   icon: ReactNode;
 }
-export interface CardProp{
 
-  data?:{
+
+export interface InputProps {
+  value: string,
+  label: string,
+  type?: 'text' | 'number' | 'email' | 'file',
+  placeholder: string,
+  name: string,
+  required?: boolean,
+  customCss?: string,
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+}
+
+
+export interface CardProp{
+  data:{
     id: number,
     name: string,
     price: number,
@@ -26,14 +39,13 @@ export interface CardProp{
 }
 
 
-export interface InputProps {
-  value: string,
-  label: string,
-  type?: 'text' | 'number' | 'email' | 'file',
-  placeholder: string,
- name: string,
-  required?: boolean,
-  customCss?: string,
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-}
 
+
+export interface CardHeaderProps {
+  headerlabel?: string;
+  headertitle?: string;
+  headericon: ReactNode;
+  headerlabeltag?: string;
+  headercount?: number;
+  variant?: 'service' | 'form' | 'product' | 'rider' | 'reminder';
+}
