@@ -34,8 +34,7 @@ console.log(isFocused)
     <div
       className={`${styles.tries_input_container} ${!isEmpty ? styles.focused : ""}`}
     >
-      <div className={`${styles.tries_input_wrapper}`}>
-        <input
+      <div className={`${styles.tries_input_wrapper}`}>        <input
           name={name}
           ref={inputref}
           onFocus={handleFocus}
@@ -47,14 +46,14 @@ console.log(isFocused)
           onChange={onChange}
         />
         {label && (
-          <label
+          <span
             className={`${styles.label_input} ${
               !isEmpty ? styles.labelFocused : ""
             }`}
-            htmlFor=""
+          
           >
             {placeholder}
-          </label>
+          </span>
         )}
       </div>
     </div>

@@ -5,7 +5,6 @@ import { CardHeaderProps } from '../../ComponentsInterface/CardsInterface';
 const DataCardHeader: React.FC<CardHeaderProps> = (props) => {
   const { variant = 'service' } = props;
 
-
   const {
     headericon,
     headertitle,
@@ -15,9 +14,11 @@ const DataCardHeader: React.FC<CardHeaderProps> = (props) => {
   } = variant === 'form'
     ? { headericon: props.headericon, headertitle: props.headertitle, headerlabel: props.headerlabel }
     : variant === 'service'
-    ? { headericon: props.headericon, headerlabel: props.headerlabel, headercount: props.headercount }
+    ? { headericon: props.headericon, headerlabel: props.headerlabel }
     : variant === 'product'
     ? { headericon: props.headericon, headerlabel: props.headerlabel, headercount: props.headercount, headerlabeltag: props.headerlabeltag }
+    : variant === 'benefit'
+    ? { headericon: props.headericon, headerlabel: props.headerlabel, headercount: props.headercount }
     : {};
 
   return (
@@ -34,7 +35,7 @@ const DataCardHeader: React.FC<CardHeaderProps> = (props) => {
             </span>
           )}
 
-          {variant === 'form' && (
+          {variant === 'form'   && (
             <div className={styles.datacard_header_form_wrapper}>
               {headertitle && <h5 className={styles.datacard_header_form_title}>{headertitle}</h5>}
               {headerlabel && <p className={styles.datacard_form_datahead}>{headerlabel}</p>}
@@ -47,20 +48,20 @@ const DataCardHeader: React.FC<CardHeaderProps> = (props) => {
             </>
           )}
 
-          {variant === 'product' && (
-            <>
+
+  
+          { variant === 'product' || variant === 'benefit'  &&  ( 
+          <>
               {headerlabel && <p className={styles.datacard_datahead}>{headerlabel}</p>}
               {headercount !== undefined && (
                 <div className={styles.datacard_count_value}>{headercount}</div>
               )}
             </>
           )}
-
-          
         </div>
          )}
 
-      {variant === 'product' && headerlabeltag && (
+      {variant === 'benefit'? null : variant === 'product' && headerlabeltag && (
         <div className={styles.datacard_header_tag}>
           <p className={styles.datacard_tag}>{headerlabeltag}</p>
         </div>

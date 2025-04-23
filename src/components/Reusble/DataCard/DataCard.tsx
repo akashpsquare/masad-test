@@ -11,6 +11,7 @@ data,
 headerlabeltag,
 headercount,
 headerlabel,
+benefitdata,
 
 
 
@@ -18,8 +19,8 @@ headerlabel,
   return (
     <div className={styles.datacard}>
       <div className={styles.datacard_wrapper}>
-         <DataCardHeader variant='product' headercount={headercount} headertitle='Add' headericon={PlugIcon} headerlabeltag={headerlabeltag} headerlabel={headerlabel}  />
-         <DataCardBody variant="product" data={data}/>
+         <DataCardHeader variant='benefit' headercount={headercount} headertitle='Add' headericon={PlugIcon} headerlabeltag={headerlabeltag} headerlabel={headerlabel}  />
+         <DataCardBody variant="benefit" data={data}  benefitdata={benefitdata}/>
       </div>
     </div>
   );

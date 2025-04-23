@@ -3,16 +3,16 @@ import "./App.css";
 import NavBar from "./components/Reusble/NavBar/NavBar";
 import PrimiumContainer from "./components/Reusble/PrimiumContainer/PrimiumContainer";
 import Input from "./components/Reusble/Inputs/Input"; 
-import DataCardBody from "./components/Reusble/DataCardBody/DataCardBody";
 import Card from "./components/Reusble/Card/Card";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const value = e.target.value;
     setInputValue(value);
-    console.log("Input changed:", value);
+    console.log("INPUT VALUE", value);
   };
 
   return (
@@ -22,8 +22,8 @@ function App() {
       <Input
         placeholder="Enter"
         name="input"
-        value={inputValue}
         label="Input Label"
+        value={inputValue}
         onChange={handleInputChange}
       />
   

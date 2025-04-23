@@ -9,6 +9,8 @@ const Card = () => {
     price: number;
   }
 
+    
+
   const [isActive, setIsActive] = useState(false);
 
   const products: Product[] = [
@@ -20,19 +22,24 @@ const Card = () => {
     { id: 6, name: 'New Stuff', price: 89.99 },
   ];
 
+  const benefits =['Benefit from thorough safety inspections and regulatory compliance checks to uphold industry standards.','Enjoy comprehensive safety evaluations and compliance assessments to ensure top-notch standards.','Receive expedited scheduling for service requests and maintenance appointments']
+  
+
   const labeltag = 'Freight';
   const count = products.length;
   const label = 'Deep Cleaning';
 
+  const benefitcount = benefits.length;
+
   return (
+
     <div
       className={`${styles.card_class} ${styles.card_customclass} ${
         isActive ? styles.active : ''
       }`}
-      onClick={() => setIsActive(!isActive)} // toggle active on click
+      onClick={() => setIsActive(!isActive)} 
     >
-      
-      <DataCard data={products} headerlabeltag={labeltag} headercount={count} headerlabel={label} />
+      <DataCard  benefitdata={benefits} data={products} headerlabeltag={labeltag} headercount={benefitcount} headerlabel={label} />
       {isActive && <span className={styles.icon}>✔</span>}
     </div>
   );

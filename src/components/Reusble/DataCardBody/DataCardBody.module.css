@@ -126,3 +126,43 @@ background: #FFFFFF99;
 font-size: 12px;;
 
 }
+/*///////////////////////////////////////////////////////*/
+
+  .datacard_benefit_wrapper{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: 12px;
+
+  }
+  .datacard_benefit_wrapper_inner{
+    
+    width: 576px;
+    height: 54px;
+    display: flex;
+
+    align-items: center;
+    font-size: 14px;
+    border-radius: 16px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.87);
+    gap: 8px;;
+
+  }
+
+  .datacard_benefit_wrapper_count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 4px;
+    background: rgba(237, 232, 231, 1);
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    gap: 10px;
+    
+  }

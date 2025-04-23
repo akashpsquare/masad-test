@@ -31,11 +31,14 @@ export interface CardProp{
     name: string,
     price: number,
   }[];
-  variant?:string,
+  benefitdata?: string[];
+  benefit?: string[];
+  variant?:string;
   headerlabel?: string;
   headericon?: ReactNode;
   headerlabeltag?: string;
   headercount?: number;
+
 }
 
 
@@ -47,5 +50,5 @@ export interface CardHeaderProps {
   headericon: ReactNode;
   headerlabeltag?: string;
   headercount?: number;
-  variant?: 'service' | 'form' | 'product' | 'rider' | 'reminder';
+  variant?: 'service' | 'form' | 'product' | 'reminder'| 'benefit';
 }

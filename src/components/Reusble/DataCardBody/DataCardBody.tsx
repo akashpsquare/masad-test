@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './DataCardBody.module.css';
 import { CardProp } from '../../ComponentsInterface/CardsInterface';
 
-const DataCardBody: React.FC<CardProp> = ({ data, variant }) => {
+const DataCardBody: React.FC<CardProp> = ({ data, variant,benefitdata }) => {
   console.log(data);
-
+console.log(benefitdata);
   return (
     <>
       {variant === 'service' && (
@@ -50,11 +50,23 @@ const DataCardBody: React.FC<CardProp> = ({ data, variant }) => {
 
         <h1 className={styles.datacard_reminder_message_heading}>Reminder</h1>
         <p className={styles.datacard_reminder_message}>Hey there! Just a friendly heads-up that your membership will expire in 10 days. Make sure to renew it to keep enjoying all the great benefits!</p>
-
         </div>
-        
         </div>
       )}
+
+
+           
+
+{variant === 'benefit' && (
+          <div className={styles.datacard_benefit_wrapper}>
+           {benefitdata?.map((benefit: string, index: number) => (
+             <div key={index} className={styles.datacard_benefit_wrapper_inner}>
+               <div className={styles.datacard_benefit_wrapper_count}><p> {index + 1} </p></div>
+               <p>{benefit}</p>
+             </div>
+           ))}
+          </div> ) }
+    
     </>
   );
 };
