@@ -8,8 +8,8 @@ const EmptyCard: FC<EmptyCardProp> = ({ label, icon}) => {
       <div className={styles.emptycard_add_label}>
         <span className={styles.card_wrapper_label}>{label}</span>
         {icon && (
-          <span className={styles.icon}>
-            {icon}
+          <span className={styles.empty_card_icon}>
+         <img src={typeof icon === 'string' ? icon : ''} alt="" />
           </span>
         )}
       </div>

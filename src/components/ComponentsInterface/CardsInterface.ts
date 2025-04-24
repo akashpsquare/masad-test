@@ -26,23 +26,27 @@ export interface InputProps {
 
 
 export interface CardProp{
+
+
+  benefit?: string[];
+  headerlabel?: string;
+  headericon?: ReactNode;
+  headerlabeltag?: string;
+  headercount?: number;
+}
+
+
+export interface CardBodyProps {
   data:{
     id: number,
     name: string,
     price: number,
   }[];
+  variant: 'service' | 'product' | 'reminder'| 'benefit';
   benefitdata?: string[];
-  benefit?: string[];
-  variant?:string;
-  headerlabel?: string;
-  headericon?: ReactNode;
-  headerlabeltag?: string;
-  headercount?: number;
+  reminderdate?: string | number;
 
 }
-
-
-
 
 export interface CardHeaderProps {
   headerlabel?: string;
@@ -51,4 +55,18 @@ export interface CardHeaderProps {
   headerlabeltag?: string;
   headercount?: number;
   variant?: 'service' | 'form' | 'product' | 'reminder'| 'benefit';
+}
+export interface SubHeaderProps {
+  label: string;
+  description: string;
+  memberType: string;
+  month: number;
+  price: number;
+  editIcon: string;
+  memberIcon: string;
+}
+
+export interface BenefitContainerProps {
+  benefit: string[]; 
+  count: number;
 }

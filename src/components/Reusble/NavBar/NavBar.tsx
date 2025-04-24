@@ -33,7 +33,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className={styles.navbar_icons}>
-        <Buttons label="Back" dimensionH={42} icon={BackIcon} onClick={() => console.log("button Clicked")} />
+        <Buttons variant={'primary'} label="Back" dimensionH={42} icon={BackIcon} onClick={() => console.log("button Clicked")} />
         <img className={styles.narbar_icons_icon} src={UserIcon} alt="User" />
         <img className={styles.narbar_icons_icon} src={NotificationIcon} alt="Notification" />
       </div>

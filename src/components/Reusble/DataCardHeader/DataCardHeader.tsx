@@ -21,9 +21,45 @@ const DataCardHeader: React.FC<CardHeaderProps> = (props) => {
     ? { headericon: props.headericon, headerlabel: props.headerlabel, headercount: props.headercount }
     : {};
 
+  const renderContent = () => {
+    switch (variant) {
+      case 'form':
+        return (
+          <div className={styles.datacard_header_form_wrapper}>
+            {headertitle && <h5 className={styles.datacard_header_form_title}>{headertitle}</h5>}
+            {headerlabel && <p className={styles.datacard_form_datahead}>{headerlabel}</p>}
+          </div>
+        );
+
+      case 'service':
+        return (
+          <>
+            {headerlabel && <p className={styles.datacard_datahead}>{headerlabel}</p>}
+          </>
+        );
+
+      case 'product':
+      case 'benefit':
+        return (
+          <>
+            {headerlabel && <p className={styles.datacard_datahead}>{headerlabel}</p>}
+            {headercount !== undefined && (
+              <div className={styles.datacard_count_value}>{headercount}</div>
+            )}
+          </>
+        );
+
+      default:
+        return null;
+    }
+  };
+
   return (
+    ////////////////////////////////////////////////////////////////////////////////
+//-------------------header icon is provided here for all the variant
+    ///////////////////////////////////////////////////////////////////////////////
     <div className={styles.datacard_header}>
-      {(headericon || headerlabel || headercount !== undefined) && (
+      {(headericon !== undefined) && (
         <div className={styles.datacard_datahead_wrapper}>
           {headericon && (
             <span className={styles.datacard_header_icon}>
@@ -35,33 +71,20 @@ const DataCardHeader: React.FC<CardHeaderProps> = (props) => {
             </span>
           )}
 
-          {variant === 'form'   && (
-            <div className={styles.datacard_header_form_wrapper}>
-              {headertitle && <h5 className={styles.datacard_header_form_title}>{headertitle}</h5>}
-              {headerlabel && <p className={styles.datacard_form_datahead}>{headerlabel}</p>}
-            </div>
-          )}
+{/* //////////////////////////////////////////////////////////////////////////////////
+-----------------Rendering all the header content here according to the variants
+    /////////////////////////////////////////////////////////////////////////////// */}
 
-          {variant === 'service' && (
-            <>
-              {headerlabel && <p className={styles.datacard_datahead}>{headerlabel}</p>}
-            </>
-          )}
-
-
-  
-          { variant === 'product' || variant === 'benefit'  &&  ( 
-          <>
-              {headerlabel && <p className={styles.datacard_datahead}>{headerlabel}</p>}
-              {headercount !== undefined && (
-                <div className={styles.datacard_count_value}>{headercount}</div>
-              )}
-            </>
-          )}
+          {renderContent()}
         </div>
-         )}
+      )}
 
-      {variant === 'benefit'? null : variant === 'product' && headerlabeltag && (
+
+{/* ////////////////////////////////////////////////////////////////////
+// header tag porvided here for the product variant only
+// //////////////////////////////////////////////////////*/}
+
+      {variant === 'product' && headerlabeltag && (
         <div className={styles.datacard_header_tag}>
           <p className={styles.datacard_tag}>{headerlabeltag}</p>
         </div>

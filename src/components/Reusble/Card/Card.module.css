@@ -1,15 +1,41 @@
 
 .card_customclass{
-    /* width:400px;
-    height: 262px; */
     margin-left: 32px;
-   padding: 16px;
-   width: 608px;
-height: 515px;
-border-radius: 36px;
-border-width: 1px;
+    padding: 16px;
+    border-radius: 36px;
+    border-width: 1px;
 
 }
+ .benefit_card{
+    width: 608px;
+    height: 515px;
+ }
+ .product_card{
+     width:400px;
+    height: 262px;
+ }
+.service_card{
+    width: 400px;
+    height: 220px;
+ }
+ .reminder_card{
+    width: 400px;
+    height: 286px;
+ }
+ .card_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 36px;
+    border-width: 1px;
+    background-color: rgba(255, 255, 255, 0.28);
+    color: rgba(75, 24, 15, 1);
+    font-size: 16px;
+ }
+
 .card_class{
     display: flex;
     justify-content: center;

@@ -44,9 +44,6 @@
 
 }
 
-
-
-
 .navbar_links a {
     display: flex;
     justify-content: center;
@@ -74,7 +71,7 @@
    
 }
 .navbar_links a.active {
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
