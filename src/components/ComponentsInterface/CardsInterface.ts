@@ -3,8 +3,8 @@ import { ReactNode } from 'react';
 
 export interface CardsProps{
   
-  children?: ReactNode;
-  customStyle?:string;
+  children: ReactNode;
+  customStyle:string;
  
 }
 export interface EmptyCardProp{
@@ -49,12 +49,12 @@ export interface CardBodyProps {
 }
 
 export interface CardHeaderProps {
-  headerlabel?: string;
+  headerlabel: string;
   headertitle?: string;
   headericon: ReactNode;
   headerlabeltag?: string;
   headercount?: number;
-  variant?: 'service' | 'form' | 'product' | 'reminder'| 'benefit';
+  variant: 'service' | 'form' | 'product' | 'reminder'| 'benefit';
 }
 export interface SubHeaderProps {
   label: string;

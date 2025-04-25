@@ -1,0 +1,34 @@
+.add_benefit_stater {
+    font-family: "Lexend Deca", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 32.1875rem; 
+    width: 77.0625rem;
+    border-radius: 2.25rem;
+    padding: 1rem; 
+    gap: 1.25rem; 
+    margin: 8.5rem 13.3125rem 15.1875rem 13.3125rem; 
+    border: 0.0625rem solid rgba(237, 232, 231, 1);
+    font-size: 0.75rem; 
+  
+}
+
+.add_benefit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.25rem; 
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgba(75, 24, 15, 1);
+    gap: 0.5rem;
+}
+.add_benefit:hover{
+cursor: pointer;
+}
+.add_benefit_icon:hover{
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.4);
+
+}

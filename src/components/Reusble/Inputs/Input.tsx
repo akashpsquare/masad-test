@@ -16,30 +16,29 @@ const Input: React.FC<InputProps> = ({
   const [isFocused, setIsFocused] = React.useState(false);
   const [isEmpty, setIsEmpty] = React.useState<boolean>(true);
 
-  // Update `isEmpty` whenever the `value` changes
   useEffect(() => {
     setIsEmpty(!(inputref.current?.value?.trim()));
   }, [value]);
 
-  // Handle input focus and blur
   const handleFocus = () => {
     setIsFocused(true);
   };
-console.log(isFocused)
+
   const handleBlur = () => {
-   setIsFocused(!isEmpty);
+    setIsFocused(!isEmpty);
   };
 
   return (
     <div
-      className={`${styles.tries_input_container} ${!isEmpty ? styles.focused : ""}`}
+      className={`${styles.input_container} ${!isEmpty ? styles.focused : ""}`}
     >
-      <div className={`${styles.tries_input_wrapper}`}>        <input
+      <div className={`${styles.input_wrapper}`}>
+        <input
           name={name}
           ref={inputref}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className={`${styles.tries_Input} ${customCss}`}
+          className={`${styles.input} ${customCss}`}
           type={type}
           value={value}
           required={required}
@@ -50,7 +49,6 @@ console.log(isFocused)
             className={`${styles.label_input} ${
               !isEmpty ? styles.labelFocused : ""
             }`}
-          
           >
             {placeholder}
           </span>
