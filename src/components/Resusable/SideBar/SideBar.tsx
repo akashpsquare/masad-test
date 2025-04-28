@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styles from './SideBar.module.css';
 import ServiceIcon from '../../../assets/Icons/ServicePlanIcon.svg';
 import ProductIcon from '../../../assets/Icons/ProductsIcon.svg';
@@ -6,7 +7,8 @@ import ReminderIcon from '../../../assets/Icons/ReminderIcon.svg';
 import SparePartsIcon from '../../../assets/Icons/SparePartsIcon.svg';
 
 const SideBar = () => {
-  // Sidebar items configuration
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   const sidebarItems = [
     { icon: ServiceIcon, label: 'Service Plan', link: '#' },
     { icon: ProductIcon, label: 'Products', link: '#' },
@@ -19,16 +21,18 @@ const SideBar = () => {
     <div className={styles.sidebar_container}>
       <ul className={styles.sidebar}>
         {sidebarItems.map((item, index) => (
-       <a className={styles.sidebar_container_link} href={item.link}>
-          <li onClick={()=>{
-            console.log(item.label);
-          }}key={index} className={ index === sidebarItems.length -1 ? `${styles.sidebar_li} ${styles.last}`:  styles.sidebar_li}>
+          <li
+            key={index}
+            className={`${styles.sidebar_li} ${index === activeIndex ? styles.active : ''}`}
+            onClick={() => setActiveIndex(index)}
+          >
+            <a className={styles.sidebar_container_link} href={item.link}>
               <div className={styles.icon_text_container}>
                 <img src={item.icon} alt={item.label} />
                 <p>{item.label}</p>
               </div>
-          </li>
             </a>
+          </li>
         ))}
       </ul>
     </div>

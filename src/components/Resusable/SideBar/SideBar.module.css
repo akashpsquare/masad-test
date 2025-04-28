@@ -1,38 +1,60 @@
-.sidebar_container{
-    font-family: "Lexend Deca", sans-serif;
-  display: flex;
-   margin-left: 444px;
-   margin-top: 20px;
-}
-
-
-.sidebar{
-    list-style-type: none;
- 
-    padding: 0;
-    margin: 0;
-}
-.sidebar_li { 
+.sidebar_li {
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
     padding: 18px 16px;
     width: 312px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     position: relative;
+    transition: margin 0.3s ease-in-out; /* Smooth transition for margin changes */
 }
 
-.last {
-     border-radius: 20px;;
+.sidebar_li.active {
+    background-color: #fff;
+    border-radius: 50px 0px 20px 50px;
+    margin-top: 10px; /* Add margin-top for active link */
+    margin-bottom: 10px; /* Add margin-bottom for active link */
 }
 
+.sidebar_li.active::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(141 17 17 / 1%);
+    top: 60px;
+    right: -41px;
+    height: 65px;
+    width: 57px;
+    border-top-right-radius: 79px;
+    border-bottom-right-radius: 17px;
+    z-index: 44;
+    box-shadow: 0 -45px 0 0 #fff;
+}
 
-.sidebar_container_link{
+.sidebar_li.active::after {
+    content: "";
+    position: absolute;
+    z-index: 44;
+    background-color: #00000000;
+    bottom: 100%;
+    right: -41px;
+    height: 65px;
+    width: 57px;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 79px;
+    box-shadow: 0 45px 0 0 #fff;
+}
+
+.sidebar_li:first-child.active::after {
+    content: none; /* Remove the ::after effect for the first link */
+}
+
+.sidebar_container_link {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.87);
     font-size: 16px;
     display: block;
 }
-.icon_text_container{
+
+.icon_text_container {
     display: flex;
     align-items: center;
     gap: 10px;
