@@ -1,79 +1,109 @@
-import React from 'react';
-import styles from './DataCardBody.module.css';
-import { CardBodyProps } from '../../ComponentsInterface/CardsInterface';
+import React from "react";
+import styles from "./DataCardBody.module.css";
+import { CardBodyProps } from "../../ComponentsInterface/CardsInterface";
 
-const DataCardBody: React.FC<CardBodyProps> = ({ data, variant, benefitdata,reminderdate }) => {
+const DataCardBody: React.FC<CardBodyProps> = ({
+  data,
+  variant,
+  benefitdata,
+  reminderdata,
+  discountdata,
+}) => {
   console.log(data);
   console.log(benefitdata);
 
   const renderContent = () => {
     switch (variant) {
-      case 'service':
+      case "service":
         return (
           <>
             <div className={styles.datacard_service_heading}>
               <p className={styles.datacard_description}>
-                Get priority Scheduling for service requests and maintenance visits for user
+                Get priority Scheduling for service requests and visits
+                maintenance.
               </p>
             </div>
-            <div className={`${styles.datacard_grid} ${styles.datacard_grid_service}`}>
+            <div
+              className={`${styles.datacard_grid} ${styles.datacard_grid_service}`}
+            >
               {data?.map((item: any) => (
                 <div key={item.id} className={styles.datacard_grid_item}>
-                  <h4>{item.name}</h4>
-                  <p className={styles.datacard_grid_item_value}>{item.price}</p>
+                  <h4 className={styles.datacard_grid_item_header}>
+                    {item.name}
+                  </h4>
+                  <p className={styles.datacard_grid_item_value}>
+                    {item.price}
+                  </p>
                 </div>
               ))}
             </div>
           </>
         );
 
-      case 'product':
+      case "product":
         return (
-          <div className={`${styles.datacard_grid} ${styles.datacard_grid_product}`}>
+          <div
+            className={`${styles.datacard_grid} ${styles.datacard_grid_product}`}
+          >
             {data?.map((item: any) => (
               <div key={item.id} className={styles.datacard_grid_item}>
-                <h4>{item.name}</h4>
+                <h4 className={styles.datacard_grid_item_header}>
+                  {item.name}
+                </h4>
                 <p className={styles.datacard_grid_item_value}>{item.price}</p>
               </div>
             ))}
           </div>
         );
 
-      case 'reminder':
-      return (
-        <>
-          <div className={styles.datacard_reminder_wrapper}>
-            <div className={styles.datacard_reminder}>
-              <div className={styles.datacard_reminder_expiry_wrapper}>
-                <h4 className={styles.datacard_reminder_title}>Reminder Date</h4>
-                <div className={styles.datacard_reminder_value_wrapper}>
-                  <p className={styles.datacard_reminder_value}>{`${reminderdate} Days Before`}</p>
-                  <p>Expiring</p>
+      case "reminder":
+        return (
+          <div className={styles.datacard_reminder_wrapper_outer}>
+            <div className={styles.datacard_reminder_wrapper}>
+              <div className={styles.datacard_reminder}>
+                <div className={styles.datacard_reminder_expiry_wrapper}>
+                  <h4 className={styles.datacard_reminder_title}>
+                    Reminder Date
+                  </h4>
+                  <div className={styles.datacard_reminder_value_wrapper}>
+                    <p className={styles.datacard_reminder_value}>
+                      {reminderdata !== undefined &&
+                        `${Number(reminderdata) < 10 ? `0${reminderdata}` : reminderdata} Days Before`}
+                    </p>
+                    <p>Expiring</p>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.datacard_reminder_expiry_wrapper}>
-                <h4 className={styles.datacard_reminder_title}>Reminder Time</h4>
-                <div className={styles.datacard_reminder_value_wrapper}>
-                  <p>10:30 AM</p>
+                <div className={styles.datacard_reminder_expiry_wrapper}>
+                  <p className={styles.datacard_reminder_title}>
+                    Reminder Time
+                  </p>
+                  <div className={styles.datacard_reminder_value_wrapper}>
+                    <p>10:30 AM</p>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className={styles.datacard_reminder_wrapper}>
+              <h1 className={styles.datacard_reminder_message_heading}>
+                Reminder
+              </h1>
+              <p className={styles.datacard_reminder_message}>
+                Hey there! Just a friendly heads-up that your membership will
+                expire in 10 days. Make sure to renew it to keep enjoying all
+                the great benefits!
+              </p>
+            </div>
           </div>
-          
-          <div className={styles.datacard_reminder_wrapper}>
-            <h1 className={styles.datacard_reminder_message_heading}>Reminder</h1>
-            <p className={styles.datacard_reminder_message}>
-              Hey there! Just a friendly heads-up that your membership will expire in 10 days. Make sure to renew it to keep enjoying all the great benefits!
-            </p>
-          </div>
-        </>
-      );
+        );
 
-      case 'benefit':
+      case "benefit":
         return (
           <div className={styles.datacard_benefit_wrapper}>
             {benefitdata?.map((benefit: string, index: number) => (
-              <div key={index} className={styles.datacard_benefit_wrapper_inner}>
+              <div
+                key={index}
+                className={styles.datacard_benefit_wrapper_inner}
+              >
                 <div className={styles.datacard_benefit_wrapper_count}>
                   <p>{index + 1}</p>
                 </div>
@@ -82,7 +112,127 @@ const DataCardBody: React.FC<CardBodyProps> = ({ data, variant, benefitdata,remi
             ))}
           </div>
         );
+      case "discount":
+        return (
+          <div className={styles.datacard_discount_grid}>
+            {discountdata?.map((data) => (
+<div className={styles.datacard_discount_items}>
+              <div className={styles.datacard_discount_item}>
+                <h1 className={styles.datacard_discount_header}>{data.eventName}</h1>
+                <p className={styles.datacard_discount_para}>
+                 {data.message}
+                </p>
+              </div>
 
+              
+              <div className={styles.datacard_discount_item}>
+                <div className={styles.datacard_discount_start_date}>
+                  <h4 className={styles.datacard_discount_start_date_header}>
+                    Start Date
+                  </h4>
+                  <div
+                    className={
+                      styles.datacard_discount_start_date_value_wrapper
+                    }
+                  >
+                    <p className={styles.datacard_discount_start_date_value}>
+                     {data.startDate}
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.datacard_discount_start_date}>
+                  <h4 className={styles.datacard_discount_start_date_header}>
+                    End Date
+                  </h4>
+                  <div
+                    className={
+                      styles.datacard_discount_start_date_value_wrapper
+                    }
+                  >
+                    <p className={styles.datacard_discount_start_date_value}>
+                     {data.endDate}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.datacard_discount_item}>
+                <div className={styles.datacard_discount_time}>
+                  <div className={styles.datacard_discount_value_outer}>
+                    <div
+                      className={styles.datacard_discount_time_value_wrapper}
+                    >
+                      <p className={styles.datacard_discount_time_value}>
+                       {data.startTime}
+                      </p>
+                    </div>
+
+                    <h4 className={styles.datacard_discount_time_header}>
+                       Alert time
+                    </h4>
+                  </div>
+                  <div className={styles.datacard_discount_value_outer}>
+                    <div
+                      className={styles.datacard_discount_time_value_wrapper}
+                    >
+                      <p className={styles.datacard_discount_time_value}>
+                       {data.endTime}
+                      </p>
+                    </div>
+
+                    <h4 className={styles.datacard_discount_time_header}>
+                   Alert interval
+                    </h4>
+                  </div>
+
+                </div>
+              </div>
+              <div className={styles.datacard_discount_item}>
+                <div className={styles.datacard_discount_time}>
+                  <div className={styles.datacard_discount_value_outer}>
+                    <div
+                      className={styles.datacard_discount_time_value_wrapper}
+                    >
+                      <p className={styles.datacard_discount_time_value}>
+                      Price
+                      </p>
+                    </div>
+
+                    <h4 className={styles.datacard_discount_time_header}>
+                     Type
+                    </h4>
+                  </div>
+                  <div className={styles.datacard_discount_value_outer}>
+                    <div
+                      className={styles.datacard_discount_time_value_wrapper}
+                    >
+                      <p className={styles.datacard_discount_time_value}>
+                       {` ${data.currency} ${data.offerExpiry}`}
+                      </p>
+                    </div>
+
+                    <h4 className={styles.datacard_discount_time_header}>
+           selected offer
+                    </h4>
+                  </div>
+
+                </div>
+                
+              </div>
+              <div className={styles.datacard_discount_item}>
+                <h1 className={styles.datacard_discount_header}>Message</h1>
+                <p className={styles.datacard_discount_para}>
+                 {data.expiryMessage}
+                </p>
+              </div>
+            </div>
+
+
+
+            ))
+ }           
+          </div>
+        );
       default:
         return null;
     }

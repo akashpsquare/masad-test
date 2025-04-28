@@ -12,11 +12,12 @@
 
 
   .datacard_datahead{
-    font-family: sans-serif;
+    font-family: Lexend Deca;
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
-    font-weight: bold;
+    letter-spacing: 0%;
+    
 }
   .datacard_count_value{
     background: linear-gradient(163.28deg, #80291A 10%, #2B0E08 91.55%);
@@ -28,6 +29,13 @@
    width: 28px;
    height: 28px;
    color: rgb(255, 255, 255);
+   font-family: Lexend Deca;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: center;
+
     
   }
   .datacard_header_tag{
@@ -47,10 +55,7 @@ font-size: 12px;
 font-weight: bold;
 
 }
-.datacard_header_form_wrapper{
 
-
-}
 
 .datacard_header_form_title{
   font-size: 14px;

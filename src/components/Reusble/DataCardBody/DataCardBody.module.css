@@ -38,6 +38,15 @@
   .datacard_grid_item p {
     margin: 0;
   }
+  .datacard_grid_item_header{
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    
+  }
   
   .datacard_grid_item_value {
     display: flex;
@@ -47,6 +56,13 @@
     width: 100%;
     background: rgba(237, 232, 231, 1);
     border-radius: 30px;
+    font-family: Lexend Deca;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: center;
+    
   }
 
   
@@ -66,10 +82,12 @@
   }
 
   .datacard_description{
-
+    font-family: Lexend Deca;
+    font-weight: 300;
     font-size: 12px;
-  
+    line-height: 16px;
     letter-spacing: 0%;
+    
   }
 
   /* //////////////////////////////////////////////////// */
@@ -77,16 +95,15 @@
 
 /*////////////////////////////////////////////////////////*/  
 
-
-
 .datacard_reminder_wrapper{
+  font-family: "Lexend Deca", sans-serif;
   display: flex;
   flex-direction: column;
   width: 368px;
   border-radius: 16px;
   padding: 12px;
   margin-top: 16px;
-  gap: 12px;
+  gap: 8px;
   background: rgba(255, 255, 255, 0.6);
   box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
 
@@ -103,19 +120,22 @@
 
 .datacard_reminder_expiry_wrapper{
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 69px;
+  justify-content: space-between;
+gap: 50px;
+   
 }
 .datacard_reminder_title{
+  font-family: "Lexend Deca", sans-serif;
   font-size: 14px;
-
+  font-weight: 400;;
 }
 .datacard_reminder_value_wrapper{
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+font-size: 12px;
 width: 180px;
 border-radius: 10px;
 padding: 4px;
@@ -125,9 +145,7 @@ background: #FFFFFF99;
   font-size: 14px;
 }
 .datacard_reminder_message{
-
 font-size: 12px;;
-
 }
 /*///////////////////////////////////////////////////////*/
 
@@ -169,3 +187,140 @@ font-size: 12px;;
     gap: 10px;
     
   }
+
+
+  /* ////////////////////////////////////////////////////////////////////////// */
+           /* discout css */
+
+  /* //////////////////////////////////////////////////////          */
+
+  .datacard_discount_grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 12px 14px;
+    overflow: scroll;
+    scrollbar-width: none;
+    grid-template-rows: auto;
+  }
+  
+  .datacard_discount_items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    padding: 6px;
+    border-radius: 20px;
+    transition: box-shadow 0.2s ease;
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(237, 232, 231, 1);
+    box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
+    gap: 8px;
+  }
+  
+.datacard_discount_item{
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 12px;
+    border: 1px solid rgba(237, 232, 231, 1);
+    box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
+    gap: 8px;
+}
+.datacard_discount_header{
+  font-family: Lexend Deca;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 0.87);
+
+}
+.datacard_discount_para{
+  font-family: Lexend Deca;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+letter-spacing: 0%;
+
+
+}
+
+.datacard_discount_start_date{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.datacard_discount_start_date_header{
+  font-family: Lexend Deca;
+font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: 0%;
+text-align: center;
+
+}
+.datacard_discount_start_date_value_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 148px;
+  height: 24px;
+  border-radius: 10px;
+  padding: 4px;
+  background: rgba(228, 220, 219, 1);
+  gap: 8px;
+  
+
+}
+.datacard_discount_start_date_value{
+  font-family: Lexend Deca;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+letter-spacing: 0%;
+text-align: center;
+
+}
+
+.datacard_discount_time{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.datacard_discount_time_value{
+  font-family: Lexend Deca;
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+}
+.datacard_discount_time_value_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 116px;
+  height: 35px;
+  border-radius: 10px;
+  background: rgba(228, 220, 219, 1);
+}
+
+.datacard_discount_value_outer{
+display: flex;
+justify-content: center;
+flex-direction: column;
+gap: 4px;
+}
+
+.datacard_discount_time_header{
+  font-family: Lexend Deca;
+font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: 0%;
+text-align: center;
+
+}

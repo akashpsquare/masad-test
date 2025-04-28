@@ -32,14 +32,64 @@ const DataCard: FC= () => {
   const labeltag = 'Freight';
   const label = 'Deep Cleaning';
 
+
+  type EventData = {
+    eventName: string;
+    message: string;
+    startTime: string;
+    endTime: string;
+    startDate: string;
+    endDate: string;
+    currency: string;
+    offerExpiry: string;
+    expiryMessage: string;
+  };
+  
+
+  const events: EventData[] = [
+    {
+      eventName: "Spring Sale",
+      message: "Up to 50% off on all items!",
+      startTime: "09:00 AM",
+      endTime: "09:00 PM",
+      startDate: "2025-04-28",
+      endDate: "2025-05-05",
+      currency: "USD",
+      offerExpiry: "2440",
+      expiryMessage: "Hurry! Sale ends May 5th at 9 PM!"
+    },
+    {
+      eventName: "Flash Deal Friday",
+      message: "One-day flash deals on electronics!",
+      startTime: "12:00 AM",
+      endTime: "11:59 PM",
+      startDate: "2025-05-02",
+      endDate: "2025-05-02",
+      currency: "USD",
+      offerExpiry: "000",
+      expiryMessage: "Flash Deal Friday ends tonight"
+    },
+    {
+      eventName: "Summer Kickoff",
+      message: "Save big on summer essentials",
+      startTime: "10:00 AM",
+      endTime: "10:00 PM",
+      startDate: "2025-06-01",
+      endDate: "2025-06-10",
+      currency: "EUR",
+      offerExpiry: "900",
+      expiryMessage: "Last chance to enjoy summer discounts!"
+    }
+  ];
+
   return (
 
 
-     <Card className='reminder_card'>
+     <Card className='product_card'>
   <div className={styles.datacard}>
       <div className={styles.datacard_wrapper}>
-         <DataCardHeader variant='service' headercount={products.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag}   />
-         <DataCardBody variant="reminder" data={products} reminderdate={5}  benefitdata={benefits} />
+         <DataCardHeader variant='product' headercount={products.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag} />
+         <DataCardBody variant="product" data={products}  />
       </div>
   </div>
   </Card>
