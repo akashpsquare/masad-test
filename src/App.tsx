@@ -1,8 +1,8 @@
 
 import "./App.css";
-import NavBar from "./components/Reusble/NavBar/NavBar";
-import DataCard from "./components/Reusble/DataCard/DataCard";
-
+import DataCard from "./components/Resusable/DataCard/DataCard";
+import NavBar from "./components/Resusable/NavBar/NavBar";
+import SideBar from "./components/Resusable/SideBar/SideBar";
 
 
 function App() {
@@ -10,7 +10,8 @@ function App() {
   return (
     <div>
    <NavBar />
-   <DataCard />
+<DataCard/>
+<SideBar/>  
 
     </div>
   );

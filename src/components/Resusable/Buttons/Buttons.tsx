@@ -10,7 +10,7 @@ interface ButtonProps {
   dimensionH?: string | number;
   iconSize?: string;
   onClick: () => void; 
-  variant?: 'primary' | 'secondary'
+  variant: 'primary' | 'secondary'
 }
 
 const Button: React.FC<ButtonProps> = ({

@@ -85,11 +85,11 @@ const DataCard: FC= () => {
   return (
 
 
-     <Card className='product_card'>
+     <Card className='discount_card'>
   <div className={styles.datacard}>
       <div className={styles.datacard_wrapper}>
-         <DataCardHeader variant='product' headercount={products.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag} />
-         <DataCardBody variant="product" data={products}  />
+         <DataCardHeader variant='discount' headercount={benefits.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag} />
+         <DataCardBody variant="discount" discountdata={events}   />
       </div>
   </div>
   </Card>

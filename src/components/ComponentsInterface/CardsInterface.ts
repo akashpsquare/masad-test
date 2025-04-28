@@ -25,8 +25,6 @@ export interface InputProps {
 
 
 export interface CardProp{
-
-
   benefit?: string[];
   headerlabel?: string;
   headericon?: ReactNode;

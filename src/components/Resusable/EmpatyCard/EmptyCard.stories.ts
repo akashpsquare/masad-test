@@ -11,7 +11,7 @@ type Story = StoryObj<typeof EmptyCard>;
 
 export const Primary: Story = {
   args: {
-   
+    
   },
 };
 

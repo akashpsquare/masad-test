@@ -56,15 +56,13 @@
     padding: 8px 16px;
     margin: 5px;
     box-sizing: border-box;
-    transition: 
-        background 0.3s ease,
-        color 0.3s ease,
-        border .8s ease,
+
+  
         
 }
 
 .navbar_links a:hover:not(.active) {
-
+ 
     border-radius: 100px;
     border: 1.5px solid #762618;
     margin: 4px;
@@ -85,7 +83,7 @@
         linear-gradient(152.51deg, #762618 17.11%, #46170F 85.58%),
         linear-gradient(151.14deg, #B67064 17.11%, #1D0602 84.54%);
         box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.4);
-      animation: fadeInLink 0.8s ease-out;
+      animation: fadeInLink 0.3s ease-out;
 }
 
 

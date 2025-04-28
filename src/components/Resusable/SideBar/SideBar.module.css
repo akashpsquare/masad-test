@@ -1,11 +1,14 @@
 .sidebar_container{
+    font-family: "Lexend Deca", sans-serif;
   display: flex;
-   
+   margin-left: 444px;
+   margin-top: 20px;
 }
 
 
 .sidebar{
     list-style-type: none;
+ 
     padding: 0;
     margin: 0;
 }
@@ -15,15 +18,17 @@
     width: 312px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    position: relative;
 }
-.sidebar ul:last-child {
-    color: red;
-  }
 
-.sidebar li a {
+.last {
+     border-radius: 20px;;
+}
+
+
+.sidebar_container_link{
     text-decoration: none;
     color: rgba(0, 0, 0, 0.87);
-
     font-size: 16px;
     display: block;
 }
