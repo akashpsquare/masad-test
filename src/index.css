@@ -1,0 +1,33 @@
+:root {
+    /*Root Variables*/
+    --color-primary-100: #e6f0ff;
+    /* very light */
+    --color-primary-200: #b3ccff;
+    --color-primary-300: #80aaff;
+    --color-primary-400: #4d87ff;
+    --color-primary-500: #1a64ff;
+    /* base */
+    --color-primary-600: #0050e0;
+    --color-primary-700: #0040b3;
+    --color-primary-800: #003080;
+    --color-primary-900: #00204d;
+
+    --secondary-color: #FF6B00;
+
+    --tertiary-color: #D9D909;
+    --warning-color: #A80000;
+    /*Root Variables for Text Colors*/
+
+    --color-text-white-100: #f5f5f5;
+    --color-text-white-200: #e0e0e0;
+    --color-text-white-300: #cccccc;
+    --color-text-white-400: #999999;
+    --color-text-white-500: #666666;
+    --color-text-white-600: #333333;
+
+
+    /*⚓ Root variables for shadows */
+    --shadow-one: 0px 1px 4px 0px #726f6d47;
+    --shadow-two: 0px 4px 40px 0px #00000080;
+    --shadow-three: 0px 0px 31.6px 0px #000000BF;
+}

@@ -1,14 +1,8 @@
-import { useState } from "react";
 import "./App.css";
-import FloatingDatePicker from "./components/Reusble/Calendar/Calendar";
+import { baseAppUrl } from "./config/config.ts";
 
 function App() {
-  return (
-    <>
-      Hello Masad
-      <FloatingDatePicker />
-    </>
-  );
+  return <>Hello Masad${baseAppUrl}</>;
 }
 
 export default App;
