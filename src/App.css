@@ -3,3 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.sidebar{
+    margin-left: 444px;
+    display: flex;
+    gap: 16px;
+}
+
+.sidebarside{
+    width: 444px;
+    background-color: #fff;
+    border-radius: 20px;
+
+}

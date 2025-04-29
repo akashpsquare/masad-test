@@ -11,7 +11,14 @@ function App() {
     <div>
    <NavBar />
 <DataCard/>
+
+<div className='sidebar'>
 <SideBar/>  
+<div className='sidebarside'>
+
+</div>
+</div>
+
 
     </div>
   );

@@ -23,7 +23,7 @@ const SideBar = () => {
         {sidebarItems.map((item, index) => (
           <li
             key={index}
-            className={`${styles.sidebar_li} ${index === activeIndex ? styles.active : ''}`}
+            className={`${styles.sidebar_li}  ${index === activeIndex ? styles.active : ''}`}
             onClick={() => setActiveIndex(index)}
           >
             <a className={styles.sidebar_container_link} href={item.link}>
