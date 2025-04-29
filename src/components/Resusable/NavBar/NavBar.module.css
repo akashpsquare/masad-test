@@ -62,7 +62,6 @@
 }
 
 .navbar_links a:hover:not(.active) {
- 
     border-radius: 100px;
     border: 1.5px solid #762618;
     margin: 4px;
@@ -70,7 +69,6 @@
    
 }
 .navbar_links a.active {
-    
     display: flex;
     justify-content: center;
     align-items: center;

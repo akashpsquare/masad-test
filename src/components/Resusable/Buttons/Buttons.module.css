@@ -13,10 +13,17 @@
     border-radius: 100px;
     
   }
+  .btn_bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B67064;
+    padding: 2px;
+    border-radius: 100px;
+  }
   
   .btn.primary {
     color: #f2e3e3;
-    border: 2.5px solid #B67064;
     gap: 4px;
     width: 108px;
     background: linear-gradient(152.51deg, #762618 17.11%, #46170F 85.58%);

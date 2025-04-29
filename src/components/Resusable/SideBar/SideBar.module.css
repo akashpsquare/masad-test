@@ -1,3 +1,11 @@
+.sidebar{
+    list-style: none;
+    font-family: "Lexend Deca", sans-serif;
+
+
+}
+
+
 .sidebar_li {
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
     padding: 18px 16px;
@@ -5,52 +13,77 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     position: relative;
-    transition: margin 0.3s ease-in-out; 
+    margin-left: 43px;
+    transition: margin 0.3s ease-in-out;
+    
+ 
 }
 
 .sidebar_li.active {
     background-color: #fff;
     border-radius: 50px 0px 20px 50px;
-    margin-top: 10px; 
-    margin-bottom: 10px; 
+    margin-top: 8px; 
+    margin-bottom: 8px; 
+   
+
 }
 
 
 .sidebar_li.active::before {
     content: "";
     position: absolute;
-    background-color: transparent;
+    background-color:  transparent;
     top: 60px;
-    right: -17px;
-    height: 73px;
-    width: 33px;
-    border-top-right-radius: 79px;
-    border-bottom-right-radius: 17px;
+    right: -16px;
+    height: 90px;
+    width: 46px;
+    border-top-right-radius: 77px;
+    border-bottom-right-radius: 0px;
     z-index: 999;
-    box-shadow: 0 -44px 0 0 #fff;
+    box-shadow: 0 -45px 0 0 #fff;
 }
 
 .sidebar_li.active::after {
     content: "";
     position: absolute;
     z-index: 44;
-    background-color: transparent;
+    background-color: #00000000;
     bottom: 100%;
-    right: -18px;
-    height: 80px;
-    width: 32px;
+    right: -16px;
+    height: 87px;
+    width: 45px;
     border-top-right-radius: 0px;
-    border-bottom-right-radius: 64px;
-    box-shadow: 0 59px 0 0 #fff
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 44px 0 0 #fff;
 }
-
+.sidebar_li:first-child.active{
+    margin-top: 0;
+}
 .sidebar_li:first-child.active::after {
-    content: none;; 
+    content: none; 
 }
 .sidebar_li:first-child.active::before{
     top: 56px;
 }
 
+/* in case last elent in div */
+
+.sidebar_li:last-child.active::before {
+    content: none; 
+}
+.sidebar_li:last-child.active{
+  margin-bottom: 0;
+}
+.sidebar_extra_div{
+    position: absolute;
+    top: 0px;
+    left: 301px;
+    bottom: 0px;
+    width: 48px;
+    height: 60px;
+    /* border-bottom-left-radius: 94px; */
+    background-color: #fff;
+}
 .sidebar_container_link {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.87);

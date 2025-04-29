@@ -21,14 +21,17 @@ const NavBar = () => {
         <ul className={styles.navbar_links}>
           {["Products", "Sparepart", "Membership", "Designation", "Service", "Interiors", "Resource"].map((item, index) => (
             <li className={styles.navbar_list} key={index}>
-              <a
+       
+              <a 
                 href={`#${item.toLowerCase()}`}
                 className={activeLink === item ? styles.active : ""}
                 onClick={() => handleLinkClick(item)}
               >
                 {item}
               </a>
+           
             </li>
+          
           ))}
         </ul>
       </div>

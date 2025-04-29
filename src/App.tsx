@@ -10,16 +10,13 @@ function App() {
   return (
     <div>
    <NavBar />
-<DataCard/>
+   {/* <DataCard/> */}
+   <div className="sidebar">
+    <SideBar/>
+    <div className="sidebarside">
 
-<div className='sidebar'>
-<SideBar/>  
-<div className='sidebarside'>
-
-</div>
-</div>
-
-
+    </div>
+   </div>
     </div>
   );
 }

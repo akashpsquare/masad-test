@@ -11,9 +11,10 @@ const SideBar = () => {
 
   const sidebarItems = [
     { icon: ServiceIcon, label: 'Service Plan', link: '#' },
-    { icon: ProductIcon, label: 'Products', link: '#' },
+    { icon: ProductIcon, label: 'Product', link: '#' },
     { icon: BenefitsIcon, label: 'Benefits & Discounts', link: '#' },
     { icon: ReminderIcon, label: 'Reminder', link: '#' },
+    { icon: ReminderIcon, label: 'Reminder0', link: '#' },
     { icon: SparePartsIcon, label: 'Spare Parts', link: '#' },
   ];
 
@@ -32,6 +33,8 @@ const SideBar = () => {
                 <p>{item.label}</p>
               </div>
             </a>
+            <div className={index=== activeIndex ? styles.sidebar_extra_div: ''}></div>
+            
           </li>
         ))}
       </ul>
