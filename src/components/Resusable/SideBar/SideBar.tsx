@@ -8,13 +8,11 @@ import SparePartsIcon from '../../../assets/Icons/SparePartsIcon.svg';
 
 const SideBar = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
   const sidebarItems = [
     { icon: ServiceIcon, label: 'Service Plan', link: '#' },
     { icon: ProductIcon, label: 'Product', link: '#' },
     { icon: BenefitsIcon, label: 'Benefits & Discounts', link: '#' },
     { icon: ReminderIcon, label: 'Reminder', link: '#' },
-    { icon: ReminderIcon, label: 'Reminder0', link: '#' },
     { icon: SparePartsIcon, label: 'Spare Parts', link: '#' },
   ];
 
@@ -23,17 +21,17 @@ const SideBar = () => {
       <ul className={styles.sidebar}>
         {sidebarItems.map((item, index) => (
           <li
-            key={index}
-            className={`${styles.sidebar_li}  ${index === activeIndex ? styles.active : ''}`}
-            onClick={() => setActiveIndex(index)}
+          key={index}
+          className={`${styles.sidebar_li}  ${index === activeIndex ? styles.active : ''}`}
+          onClick={() => setActiveIndex(index)}
           >
+          <div className={index=== activeIndex ? styles.sidebar_extra_div: ''}></div>
             <a className={styles.sidebar_container_link} href={item.link}>
               <div className={styles.icon_text_container}>
-                <img src={item.icon} alt={item.label} />
-                <p>{item.label}</p>
+                <img className={styles.sicebar_icon} src={item.icon} alt={item.label} />
+                <p className={styles.sidebar_label}>{item.label}</p>
               </div>
             </a>
-            <div className={index=== activeIndex ? styles.sidebar_extra_div: ''}></div>
             
           </li>
         ))}

@@ -1,14 +1,16 @@
 
-@keyframes fadeInLink {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
+@keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.9); /* Slightly smaller */
     }
-    to {
-        opacity: 1;
-        transform: scale(1);
+    100% {
+      opacity: 1;
+      transform: scale(1); /* Normal size */
     }
-}
+  }
+
+
 
 
 .navbar {
@@ -55,10 +57,7 @@
     border-radius: 100px;
     padding: 8px 16px;
     margin: 5px;
-    box-sizing: border-box;
-
-  
-        
+    box-sizing: border-box;     
 }
 
 .navbar_links a:hover:not(.active) {
@@ -66,23 +65,24 @@
     border: 1.5px solid #762618;
     margin: 4px;
     height: 34px;
-   
 }
 .navbar_links a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 34px;
+    position: relative;
+    height: 32px;
     border-radius: 100px;
     margin: 4px;
     color: #f2e3e3;
-    border: 2.5px solid #B67064;
     background-image:
         linear-gradient(152.51deg, #762618 17.11%, #46170F 85.58%),
         linear-gradient(151.14deg, #B67064 17.11%, #1D0602 84.54%);
         box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.4);
-      animation: fadeInLink 0.3s ease-out;
+        animation: fadeInScale 0.3s ease-out; 
 }
+
+
 
 
 .navbar_icons {

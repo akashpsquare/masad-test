@@ -17,15 +17,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #B67064;
-    padding: 2px;
+    background-image: linear-gradient(151.14deg, #B67064 17.11%, #1D0602 84.54%);
+    padding: 2.5px;
     border-radius: 100px;
   }
   
   .btn.primary {
     color: #f2e3e3;
     gap: 4px;
-    width: 108px;
     background: linear-gradient(152.51deg, #762618 17.11%, #46170F 85.58%);
     border-radius: 100px;
   }
@@ -36,8 +35,8 @@
     color:#762618 ;
     gap: 10px; 
     width: 114px;
-    font-weight: bold;
   }
+
   
   .icon {
     display: flex;

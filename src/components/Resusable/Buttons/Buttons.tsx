@@ -24,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({
   dimensionH = 'auto',
 }) => {
   return (
-    <div className={styles.btn_bg}>
+    <div className={variant === 'primary' ? styles.btn_bg : ''}>
     <button className={`${styles.btn} ${styles[variant]}`} onClick={onClick} style={{ width: dimensionW , height: dimensionH }}>
       {icon && iconPosition === 'left' && (
         <span className={`${styles.icon}`} style={{ fontSize: iconSize }}>
