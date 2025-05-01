@@ -1,22 +1,31 @@
 
 import "./App.css";
-import DataCard from "./components/Resusable/DataCard/DataCard";
-import NavBar from "./components/Resusable/NavBar/NavBar";
-import SideBar from "./components/Resusable/SideBar/SideBar";
+import {useState} from 'react';
+import DataCard from "./components/Reusable/DataCard/DataCard";
+import NavBar from "./components/Reusable/NavBar/NavBar";
+
+import Input from "./components/Reusable/Inputs/Input";
 
 
 function App() {
 
+  const [input,setInput] = useState({
+    name: ''
+  })
+  function handelchange(e: React.ChangeEvent<HTMLInputElement>): void {
+    const {name, value} = e.target;
+    setInput((prevInput) => ({
+      ...prevInput,
+      [name]: value
+    }));
+    console.log(`${e.target.name}: ${e.target.value}`);
+  }
+
   return (
     <div>
    <NavBar />
-   {/* <DataCard/> */}
-   <div className="sidebar">
-    <SideBar/>
-    <div className="sidebarside">
-
-    </div>
-   </div>
+ 
+   <Input label={'Name'} name={'name'}   placeholder={'Ener Your name'} type={'text'} onChange={handelchange} value={input.name}/>
     </div>
   );
 }

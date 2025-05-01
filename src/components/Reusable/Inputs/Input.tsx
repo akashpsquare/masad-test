@@ -13,7 +13,7 @@ const Input: React.FC<InputProps> = ({
   onChange,
 }) => {
   const inputref = useRef<HTMLInputElement>(null);
-  const [isFocused, setIsFocused] = React.useState(false);
+  const [    , setIsFocused] = React.useState(false);
   const [isEmpty, setIsEmpty] = React.useState<boolean>(true);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Input: React.FC<InputProps> = ({
               !isEmpty ? styles.labelFocused : ""
             }`}
           >
-            {placeholder}
+            {placeholder ? placeholder : label }
           </span>
         )}
       </div>

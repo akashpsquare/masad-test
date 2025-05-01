@@ -21,8 +21,6 @@ const NavBar = () => {
         <ul className={styles.navbar_links}>
           {["Products", "Sparepart", "Membership", "Designation", "Service", "Interiors", "Resource"].map((item, index) => (
             <li className={styles.navbar_list} key={index}>    
-        
-    
     <a
       className={activeLink === item ? styles.active : ""}
       href={`#${item.toLowerCase()}`}

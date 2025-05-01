@@ -15,8 +15,8 @@ export interface EmptyCardProp{
 export interface InputProps {
   value: string,
   label: string,
-  type?: 'text' | 'number' | 'email' | 'file',
-  placeholder: string,
+  type: 'text' | 'number' | 'email' | 'file',
+  placeholder?: string,
   name: string,
   required?: boolean,
   customCss?: string,
