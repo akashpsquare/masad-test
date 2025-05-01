@@ -12,7 +12,7 @@ type Story = StoryObj<typeof EmptyCard>;
 export const Primary: Story = {
   args: {
     icon: Icon,
-    label: 'Add Products to the list'
+    label: 'Add Products'
   },
 };
 
