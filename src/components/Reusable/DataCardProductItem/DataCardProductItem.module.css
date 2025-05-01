@@ -1,0 +1,52 @@
+.datacard_grid_item {
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 8px;
+    transition: box-shadow 0.2s ease;
+    color: black;
+    gap: 6px;
+
+  }
+  
+  .datacard_grid_item h4,
+  .datacard_grid_item p {
+    margin: 0;
+  }
+  .datacard_grid_item_header{
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    
+  }
+  
+  .datacard_grid_item_value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    width: 100%;
+    background: rgba(237, 232, 231, 1);
+    border-radius: 30px;
+    font-family: Lexend Deca;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: center;
+    
+  }
+
+  
+  .datacard_grid_item:hover {
+    box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
+    scale: 1;
+  }

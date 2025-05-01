@@ -20,11 +20,12 @@ const Button: React.FC<ButtonProps> = ({
   iconSize = '16px',
   onClick,
   variant = 'primary',
-  dimensionW = '104px',
-  dimensionH = 'auto',
+  dimensionW = '',
+  dimensionH = '',
 }) => {
   return (
-    <div className={variant === 'primary' ? styles.btn_bg : ''}>
+    <div className={variant === 'primary' ? styles.btn_bg : '' } style={{ width: dimensionW , height: dimensionH }}>
+
     <button className={`${styles.btn} ${styles[variant]}`} onClick={onClick} style={{ width: dimensionW , height: dimensionH }}>
       {icon && iconPosition === 'left' && (
         <span className={`${styles.icon}`} style={{ fontSize: iconSize }}>
@@ -38,6 +39,7 @@ const Button: React.FC<ButtonProps> = ({
         </span>
       )}
     </button>
+
     </div>
 
   );

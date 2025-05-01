@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import  BeneftitContainer  from "./BenefitContainer";
+import BeneftitContainer from "./BenefitContainer";
 
 const meta = {
-  title: "Components/Reusable/Buttons",
+  title: "Components/Reusable/BeneftitContainer",
   component: BeneftitContainer,
 } satisfies Meta<typeof BeneftitContainer>;
 
@@ -11,6 +11,8 @@ type Story = StoryObj<typeof BeneftitContainer>;
 
 export const Primary: Story = {
   args: {
-   
+    benefit: ["Free Shipping", "24/7 Support", "Exclusive Discounts"], 
+    count: 3, 
+    label: 'Benefit'
   },
 };

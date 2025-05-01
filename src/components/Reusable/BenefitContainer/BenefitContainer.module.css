@@ -1,15 +1,14 @@
 .benefit_container{
-        width: 540px;
-    
+    font-family: "Lexend Deca", sans-serif;
         border-radius: 24px;
         border-width: 2px;
         padding: 16px;
         gap: 8px;
-        border: 2px solid;
-        border: linear-gradient(163.28deg, #80291A 10%, #2B0E08 91.55%);
-
+        border: 2px solid #80291A ;
 }
+
 .benefit_container_header{
+    color: rgba(75, 24, 15, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,22 +17,24 @@
 .benefit_container_benefit_count{
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 31px;
+  justify-content: center;
 height: 24px;
 border-radius: 57px;
-padding: 4px 16px;
+padding: 4px 12px;
 background: rgba(237, 232, 231, 1);
 
 
 }
 .benefit_container_body{
-    font-family: "Lexend Deca", sans-serif;
     position: relative;
-    width: 508px;
     border-radius: 16px;
     padding: 16px;
     background: rgba(255, 255, 255, 0.28);
+font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: 0%;
+
     
 }
 .benefit_container_body_wrapper{

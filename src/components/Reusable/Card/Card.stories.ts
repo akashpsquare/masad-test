@@ -3,7 +3,7 @@ import Card  from "./Card";
 import "../../../index.css"
 
 const meta = {
-  title: "Components/Reusble/Card",
+  title: "Components/Reusable/Card",
   component:  Card,
 } satisfies Meta<typeof  Card>;
 
@@ -16,5 +16,3 @@ export const Story = {
   
   },
 };
-
-

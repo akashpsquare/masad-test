@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Service } from './../Reusable/DataCardBody/DataCardBody.stories';
 
 
 export interface CardsProps{
@@ -35,6 +36,7 @@ export interface CardProp{
 export type CardBodyProps =
   | {
       variant: 'service' | 'product';
+      serviceMessage?: string;
       data: {
         id: number;
         name: string;
@@ -44,19 +46,31 @@ export type CardBodyProps =
       reminderdata?: never;
       discountdata?: never;
     }
-  | {
+  
+ 
+  
+  |{
       variant: 'benefit';
       benefitdata: string[];
       data?: never;
       reminderdata?: never;
       discountdata?: never;
+      serviceMessage?: never;
+
     }
   | {
       variant: 'reminder';
-      reminderdata: string | number;
+      reminderdata: {
+                days: number,
+                time: string,
+                message: string,
+
+      }[];
       data?: never;
       benefitdata?: never;
       discountdata?: never;
+      serviceMessage?: never;
+
     }
   | {
       variant: 'discount';
@@ -64,6 +78,8 @@ export type CardBodyProps =
       data?: never;
       benefitdata?: never;
       reminderdata?: never;
+      serviceMessage?: never;
+
     };
 
 export interface DiscountData {
@@ -86,6 +102,7 @@ export interface CardHeaderProps {
   headerlabeltag?: string;
   headercount?: number;
   variant: 'service' | 'form' | 'product' | 'reminder'| 'benefit' | 'discount';
+  handelAddButton?: (event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 export interface SubHeaderProps {
   label: string;
@@ -100,5 +117,6 @@ export interface SubHeaderProps {
 export interface BenefitContainerProps {
   benefit: string[]; 
   count: number;
+  label: string;
 }
 

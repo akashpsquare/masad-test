@@ -3,17 +3,17 @@ import { FC, useState } from 'react'
 import { BenefitContainerProps } from '../../ComponentsInterface/CardsInterface'
 import DeleButtonIcon from '../../../assetS/Icons/DeleteButtonIcon.svg'
 
-const BenefitContainer: FC<BenefitContainerProps> = ({ benefit, count }) => {
-  const [visibleIndex, setVisibleIndex] = useState<number | null>(null);
+const BenefitContainer: FC<BenefitContainerProps> = ({ benefit, count, label}) => {
+  const [visible, setVisible] = useState<number | null>(null);
 
   const handleVisibility = (index: number) => {
-    setVisibleIndex(visibleIndex === index ? null : index);
+    setVisible(visible === index ? null : index);
   };
-
+ 
   return (
     <div className={styles.benefit_container}>
       <div className={styles.benefit_container_header}>
-        <h4 className={styles.benefit_container_header_title}>Benefits</h4>
+        <h4 className={styles.benefit_container_header_title}>{label}</h4>
         <div className={styles.benefit_container_benefit_count}>
           <p>{count}</p>
         </div>
@@ -27,7 +27,7 @@ const BenefitContainer: FC<BenefitContainerProps> = ({ benefit, count }) => {
             onClick={() => handleVisibility(index)}
           >
             <p>{item}</p>
-            {visibleIndex === index && (
+            {visible=== index && (
               <span className={styles.benefit_container_delete_icon}>
                 <img
                   src={DeleButtonIcon}

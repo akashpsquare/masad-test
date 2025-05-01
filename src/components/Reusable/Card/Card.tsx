@@ -15,9 +15,8 @@ const Card = ({ children, className = '' }: CardProps) => {
         ${styles.card_class}
         ${styles.card_customclass}
         ${isActive ? styles.active : ''}
-   
-      `}
-      onClick={() => setIsActive(!isActive)}
+        `}
+        onClick={() => setIsActive(isActive)}
     >
       {children}
       {isActive && <span className={styles.icon}>✔</span>}

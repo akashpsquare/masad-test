@@ -24,7 +24,7 @@ function App() {
   return (
     <div>
    <NavBar />
- 
+ <DataCard/>
    <Input label={'Name'} name={'name'}   placeholder={'Ener Your name'} type={'text'} onChange={handelchange} value={input.name}/>
     </div>
   );

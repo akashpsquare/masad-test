@@ -1,4 +1,4 @@
-import { FC,useState } from 'react';
+import { FC } from 'react';
 import styles from './DataCard.module.css';
 // still using same CSS file
 // import PlugIcon from './PlugIcon.svg'
@@ -82,17 +82,62 @@ const DataCard: FC= () => {
     }
   ];
 
+  
+  const reminderdata = [{
+    days: 7,
+    time: "10:00 AM",
+    message: "helo this is reminder message",
+  }]
+
   return (
 
-
-     <Card className='discount_card'>
+<div>
+<Card className='discount_card'>
   <div className={styles.datacard}>
       <div className={styles.datacard_wrapper}>
-         <DataCardHeader variant='discount' headercount={benefits.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag} />
+         <DataCardHeader variant='form' headercount={benefits.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag} />
          <DataCardBody variant="discount" discountdata={events}   />
       </div>
   </div>
   </Card>
+  <Card className='product_card'>
+  <div className={styles.datacard}>
+      <div className={styles.datacard_wrapper}>
+         <DataCardHeader variant='product' headercount={products.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag} />
+         <DataCardBody variant="product" data={products}   />
+      </div>
+  </div>
+  </Card>
+  <Card className='service_card'>
+  <div className={styles.datacard}>
+      <div className={styles.datacard_wrapper}>
+         <DataCardHeader variant='service' headercount={products.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag} />
+         <DataCardBody variant={"service"} data={products}  serviceMessage='Get priority scheduling for service requests and maintenance visits.' />
+      </div>
+  </div>
+  </Card>
+  <Card className='benefit_card'>
+  <div className={styles.datacard}>
+      <div className={styles.datacard_wrapper}>
+         <DataCardHeader variant='benefit' headercount={products.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag} />
+         <DataCardBody variant={"benefit"} benefitdata={benefits}   />
+      </div>
+  </div>
+  </Card>
+  <Card className='reminder_card'>
+  <div className={styles.datacard}>
+      <div className={styles.datacard_wrapper}>
+         <DataCardHeader variant='reminder' headercount={products.length} headertitle='Add' headerlabel={label} headericon={PlugIcon} headerlabeltag={labeltag} />
+         <DataCardBody variant={"reminder"} reminderdata={reminderdata}   />
+      </div>
+  </div>
+  </Card>
+
+
+</div>
+    
+
+   
   );
 };
 

@@ -19,63 +19,9 @@
      margin-top: 0px;
     }
 
-  .datacard_grid_item {
-    display: flex;
-    height: 64px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 16px;
-    padding: 8px;
-    transition: box-shadow 0.2s ease;
-    color: black;
-    gap: 6px;
-
-  }
-  
-  .datacard_grid_item h4,
-  .datacard_grid_item p {
-    margin: 0;
-  }
-  .datacard_grid_item_header{
-    font-family: "Lexend Deca", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 0%;
-    text-align: center;
-    
-  }
-  
-  .datacard_grid_item_value {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 0px;
-    width: 100%;
-    background: rgba(237, 232, 231, 1);
-    border-radius: 30px;
-    font-family: Lexend Deca;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    text-align: center;
-    
-  }
-
-  
-  .datacard_grid_item:hover {
-    box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
-    scale: 1;
-  }
-
+ 
   .datacard_service_heading{
       margin: 16px 0px 12px 0px;
-      width: 368px;
-      height: 56px;
       border-radius: 16px;
       padding: 12px;
       background: #FFFFFF99;
@@ -151,7 +97,6 @@ font-size: 12px;;
 /*///////////////////////////////////////////////////////*/
 
   .datacard_benefit_wrapper{
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,13 +110,14 @@ font-size: 12px;;
     width: 576px;
     height: 54px;
     display: flex;
-
     align-items: center;
     font-size: 14px;
     border-radius: 16px;
-    padding: 4px;
+    padding: 4px 10px 4px 4px;
     background: rgba(255, 255, 255, 0.87);
-    gap: 8px;;
+    gap: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
   }
 
@@ -184,9 +130,12 @@ font-size: 12px;;
     background: rgba(237, 232, 231, 1);
     width: 42px;
     height: 42px;
-    border-radius: 12px;
     gap: 10px;
+    flex-shrink: 0;
     
+  }
+  .datacard_benefit_value{
+
   }
 
 
