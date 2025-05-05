@@ -1,0 +1,105 @@
+.icon_button_outer {
+  height: auto;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* .icon_button_outer.contained {
+  background: linear-gradient(151.14deg, #b67064 17.11%, #1d0602 84.54%);
+  box-shadow: 1px 2px 10px 0px #00000066;
+} */
+
+.icon_button_outer.outline {
+  /* background: linear-gradient(163.28deg, #80291a 10%, #2b0e08 91.55%); */
+  
+  box-shadow: 1px 2px 10px 0px #0000001a;
+  backdrop-filter: blur(60px);
+}
+
+.icon_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  /* transition:
+    background 0.3s ease,
+    border 0.3s ease; */
+  /* border: 1px solid linear-gradient(163.28deg, #80291a 10%, #2b0e08 91.55%); */
+  /* border-image: linear-gradient(to right, #3acfd5 50%, #3a4ed5 100%) 1; */
+  /* border-radius: 50px; *
+
+/* border-image-source: linear-gradient(163.28deg, #80291A 10%, #2B0E08 91.55%);
+
+box-shadow: 1px 2px 10px 0px #0000001A;
+
+backdrop-filter: blur(60px); */
+border: none;
+  border-radius: 999px;
+  padding: 2.5px; /* Border thickness */
+
+  background: linear-gradient(163.28deg, #80291A 10%, #2B0E08 91.55%),
+              white;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+
+  /* padding: 5px;
+  margin: 2.5px; */
+}
+
+/* Size */
+.icon_button.small {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+}
+
+.icon_button.medium {
+  width: 42px;
+  height: 42px;
+  font-size: 16px;
+}
+
+.icon_button.large {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+}
+
+/* Variants */
+/* .icon_button.contained {
+  background: linear-gradient(152.51deg, #762618 17.11%, #46170f 85.58%);
+  color: white;
+} */
+
+/* .icon_button.contained::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(151.14deg, #b67064 17.11%, #1d0602 84.54%);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  z-index: -1;
+} */
+
+.icon_button.contained:hover {
+  background-color: #3d1515;
+}
+
+/* .icon_button.outline {
+  background-color: #FFFFFF47;
+  color: #5b1f1f;
+  box-shadow:  inset 0px 3px 5px 0 #000, 
+  inset 0 6px 5px 0px #ccc,
+  inset 0 9px 0px 0px #fff;
+} */
+
+/* .icon_button.outline:hover {
+  background-color: rgba(91, 31, 31, 0.1);
+} */
