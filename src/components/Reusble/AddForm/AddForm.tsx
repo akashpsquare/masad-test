@@ -36,13 +36,15 @@ const AddForm = ({
   isRightButtonVisible = false,
   rightButtonHandler,
   children: Children,
-  btn1Label="Cancel",
+  btn1Label = "Cancel",
   btn1Handler,
   btn2Label = "Add",
   btn2Handler,
 }: AddFormState) => {
   return (
-    <div className={`${styles.addForm_box} ${open ? styles.addForm_box_open : ""}`}>
+    <div
+      className={`${styles.addForm_box} ${open ? styles.addForm_box_open : ""}`}
+    >
       <div className={`${styles.addForm_head}`}>
         <BenefitsAddIcon width="52px" height="52px" color="" />
         <div className={`${styles.addForm_head_content}`}>
@@ -60,12 +62,16 @@ const AddForm = ({
         )}
       </div>
 
-      <div>{Children}</div>
-
+      <div className={styles.addForm_content}>{Children}</div>
+      
       <div className={`${styles.addForm_footer}`}>
-        <button onClick={btn1Handler} className={`${styles.btn_outline}`}>{btn1Label}</button>
+        <button onClick={btn1Handler} className={`${styles.btn_outline}`}>
+          {btn1Label}
+        </button>
 
-        <button onClick={btn2Handler} className={`${styles.btn_contained}`}>{btn2Label}</button>
+        <button onClick={btn2Handler} className={`${styles.btn_contained}`}>
+          {btn2Label}
+        </button>
       </div>
     </div>
   );

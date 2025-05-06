@@ -7,35 +7,35 @@
 
 .addForm_box {
   max-width: 588px;
-  inline-size: 100%;
-  border-radius: 48px;
-  padding-inline: 20px;
-  padding-block: 32px;
-  block-size: 90vh;
+  width: 100%;
+  border-radius: 3rem;
   position: relative;
   background: #ffffff4d;
   box-shadow: var(--shadow-one);
   backdrop-filter: var(--backdrop-filter-one);
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-direction: column;
   position: absolute;
-  top: 24px;
+  top: 1.5rem;
+  bottom: 1.5rem;
   right: -100%;
   transition: all 1s ease-in-out;
   z-index: 1000;
-  max-height: 500px;
+  /* max-height: 85vh; */
 }
 
 .addForm_box_open{
-  right: 24px;
+  right: 1rem;
 }
 
 .addForm_head {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
+  height: 3.2rem;
+  padding : 2rem 1.5rem 0rem 1.5rem;
 }
 
 .addForm_head_content {
@@ -50,8 +50,8 @@
 .addForm_head_content h4 {
   font-family: "Lexend Deca";
   font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 0.875rem;
+  line-height: 1rem;
   letter-spacing: 0%;
   padding: 0;
   margin: 0;
@@ -61,8 +61,8 @@
 .addForm_head_content h3 {
   font-family: "Lexend Deca";
   font-weight: 400;
-  font-size: 27px;
-  line-height: 34px;
+  font-size: 1.6875rem;
+  line-height: 2.125rem;
   letter-spacing: 0px;
   padding: 0;
   margin: 0;
@@ -85,29 +85,33 @@
   backdrop-filter: blur(60px); */
 }
 
+.addForm_content{
+  height : calc(100% - 11.025rem);
+  padding: 0px 1.5rem 0px 1.5rem;
+  margin-top: 2.5rem;
+}
+
 .addForm_footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
-  margin-top: 32px;
-  padding: 36px 0px 48px 0px;
+  gap: 1.5rem;
+  padding: 2.25rem 0px 3rem 0px;
 }
 
 .addForm_footer button {
   cursor: pointer;
   font-family: "Lexend Deca";
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 18px;
-  width: 140px;
-  height: 42px;
+  line-height: 1rem;
+  width: 8.75rem;
+  /* height: 2.625rem; */
   border-radius: 100px;
   border-width: 1.2px;
-  padding-top: 12px;
-  padding-right: 16px;
-  padding-bottom: 12px;
-  padding-left: 16px;
+  padding: 0.75rem 1rem;
 }
+
 
 .btn_outline {
   background: transparent;
