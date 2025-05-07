@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import styles from "./BenefitTabs.module.css";
 import { DeleteIcon, UndoIcon } from "../../../assets/icons";
+import { Benefit } from "../../../modules/Textbenefits/AddBenefits";
 
-export type Benefit = {
-  id: number;
-  text: string;
-  deleted: boolean;
-};
 
 type IBenefitsTabProps = {
   type: "Recent" | "Existing";
   benefits: Benefit[];
   onChange: (updated: Benefit[]) => void;
-  editId?: Number | null;
-  editHandler: (id: number, text: string) => void;
+  editId?: string | null;
+  editHandler: (id: string, text: string) => void;
 };
 
 export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
@@ -21,28 +17,32 @@ export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
   benefits,
   onChange,
   editHandler,
-  editId = false,
+  editId = null,
 }) => {
-  const handleDelete = (id: number) => {
+
+  const handleDelete = (id: string) => {
     // Prevent deleting the benefit if it's being edited
     // This check is to ensure that the delete action doesn't interfere with the edit action
     if(editId && editId === id) return;
 
+    console.log("Deleting benefit with id:", id);
     // If the type is "Recent", remove the benefit from the list
     // If the type is "Existing", mark it as deleted
     if (type === "Recent") {
       onChange(benefits.filter((b) => b.id !== id));
     } else {
       onChange(
-        benefits.map((b) => (b.id === id ? { ...b, deleted: true } : b))
+        benefits.map((b) =>
+          b.id === id ? { ...b, isDeleted: true } : b
+        )
       );
     }
   };
 
   // Function to handle undoing the delete action
   // This will set the deleted property of the benefit back to false
-  const handleUndo = (id: number) => {
-    onChange(benefits.map((b) => (b.id === id ? { ...b, deleted: false } : b)));
+  const handleUndo = (id: string) => {
+    onChange(benefits.map((b) => (b.id === id ? { ...b, isDeleted : false} : b)));
   };
 
   return (
@@ -59,10 +59,7 @@ export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
               <span
                 className={styles.benefitText}
                 onClick={(e) => {
-                  if (
-                    !b.deleted &&
-                    (e.target as HTMLElement).tagName !== "BUTTON"
-                  ) {
+                  if ((e.target as HTMLElement).tagName !== "BUTTON") {
                     editHandler(b.id, b.text);
                   }
                 }}
@@ -71,14 +68,14 @@ export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
               </span>
               <button
                 className={`${styles.iconBtn} ${
-                  b.deleted ? styles.undoBtn : styles.deleteBtn
+                  b.isDeleted ? styles.undoBtn : styles.deleteBtn
                 }`}
                 onClick={() =>
-                  b.deleted ? handleUndo(b.id) : handleDelete(b.id)
+                  b.isDeleted ? handleUndo(b.id) : handleDelete(b.id)
                 }
-                title={b.deleted ? "Undo" : "Delete"}
+                title={b.isDeleted ? "Undo" : "Delete"}
               >
-                {b.deleted ? (
+                {b.isDeleted ? (
                   <UndoIcon width="12" height="12" color="white" />
                 ) : (
                   <DeleteIcon width="12" height="12" color="#4B180F" />

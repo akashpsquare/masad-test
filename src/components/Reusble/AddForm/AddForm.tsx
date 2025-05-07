@@ -1,6 +1,12 @@
-import React, { Children, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import styles from "./AddForm.module.css";
-import { BenefitsAddIcon, CrossButtonWithIcon } from "../../../assets/icons";
+import {
+  BenefitsAddIcon,
+  CrossButtonWithIcon,
+  BenfitsDiscardIcon,
+  BenfitsSummaryUpdatedIcon,
+  BenfitsSummaryIcon,
+} from "../../../assets/icons";
 
 export interface AddFormState {
   open: boolean;
@@ -10,7 +16,9 @@ export interface AddFormState {
   status?: "update" | "delete" | "default";
   summaryContent: string;
   isSummary: boolean;
+  setSummary: (value: boolean) => void;
   isDiscard?: boolean;
+  setDiscard: (value: boolean) => void;
   inputError?: boolean;
   variant: "primary" | "secondary";
   onCancel: () => void;
@@ -20,7 +28,7 @@ export interface AddFormState {
   validateError?: () => void;
   validateIsEmpty?: () => void;
   isSecondFormOpen?: boolean;
-  Icon?: () => void;
+  Icon?: React.ElementType;
   isRightButtonVisible: false;
   rightButtonHandler: () => void;
   btn1Label?: string;
@@ -31,8 +39,13 @@ export interface AddFormState {
 
 const AddForm = ({
   open,
+  isSummary = false,
+  isDiscard = false,
+  setDiscard,
+  setSummary,
   label = "Add",
-  headingLabel = "Benefits",
+  headingLabel,
+  Icon = BenefitsAddIcon,
   isRightButtonVisible = false,
   rightButtonHandler,
   children: Children,
@@ -41,14 +54,25 @@ const AddForm = ({
   btn2Label = "Add",
   btn2Handler,
 }: AddFormState) => {
+
   return (
     <div
       className={`${styles.addForm_box} ${open ? styles.addForm_box_open : ""}`}
     >
       <div className={`${styles.addForm_head}`}>
-        <BenefitsAddIcon width="52px" height="52px" color="" />
-        <div className={`${styles.addForm_head_content}`}>
-          <h4>{label}</h4>
+        {isDiscard ? (
+          <BenfitsDiscardIcon width="52px" height="52px" />
+        ) : isSummary ? (
+          <BenfitsSummaryIcon width="52px" height="52px" />
+        ) : (
+          <Icon width="52px" height="52px" />
+        )}
+        <div
+          className={`${styles.addForm_head_content} ${isDiscard ? styles.addForm_head_content_discard : isSummary ? styles.addForm_head_content_summary : ""}`}
+        >
+          <h4 style={{ color: isDiscard ? "" : isSummary ? "" : "" }}>
+            {isDiscard ? "Discard" : isSummary ? "Summary" : label}
+          </h4>
           <h3>{headingLabel}</h3>
         </div>
 
@@ -63,14 +87,14 @@ const AddForm = ({
       </div>
 
       <div className={styles.addForm_content}>{Children}</div>
-      
+
       <div className={`${styles.addForm_footer}`}>
         <button onClick={btn1Handler} className={`${styles.btn_outline}`}>
-          {btn1Label}
+          {isDiscard ? "Back" : isSummary ? "Back" : btn1Label}
         </button>
 
         <button onClick={btn2Handler} className={`${styles.btn_contained}`}>
-          {btn2Label}
+          {isDiscard ? "Discard" : isSummary ? "Submit" : btn2Label}
         </button>
       </div>
     </div>

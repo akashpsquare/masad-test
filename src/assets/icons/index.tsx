@@ -114,6 +114,210 @@ export const BenefitsAddIcon = ({
   );
 };
 
+export const BenfitsDiscardIcon = ({
+  width = "12",
+  height = "12",
+  color = "white",
+}: ISvgProp) => {
+  console.log(color);
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 52 52"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        width="52"
+        height="52"
+        rx="26"
+        fill="url(#paint0_linear_822_2696)"
+      />
+      <path
+        d="M22.193 13.3334C18.6503 13.4144 16.581 13.7528 15.1672 15.1666C13.7534 16.5804 13.415 18.6497 13.334 22.1924M29.8083 13.3334C33.351 13.4144 35.4203 13.7528 36.8341 15.1666C38.2479 16.5804 38.5863 18.6497 38.6673 22.1924M29.8083 38.6667C33.351 38.5857 35.4203 38.2473 36.8341 36.8335C38.2479 35.4196 38.5863 33.3504 38.6673 29.8077M22.193 38.6667C18.6503 38.5857 16.581 38.2473 15.1672 36.8335C13.7534 35.4196 13.415 33.3504 13.334 29.8077"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M20.6677 20.6667H20.6797"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M31.3337 31.3334H31.3457"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M20.668 31.3334L31.3346 20.6667"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_822_2696"
+          x1="26"
+          y1="0"
+          x2="26"
+          y2="52"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#CA0E0E" />
+          <stop offset="1" stop-color="#420000" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+export const BenfitsSummaryIcon = ({
+  width = "12",
+  height = "12",
+  color = "white",
+}: ISvgProp) => {
+  console.log(color);
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 52 52"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        width="52"
+        height="52"
+        rx="26"
+        fill="url(#paint0_linear_822_21173)"
+      />
+      <path
+        d="M22.193 13.3334C18.6503 13.4144 16.581 13.7528 15.1672 15.1666C13.7534 16.5804 13.415 18.6497 13.334 22.1924M29.8083 13.3334C33.351 13.4144 35.4203 13.7528 36.8341 15.1666C38.2479 16.5804 38.5863 18.6497 38.6673 22.1924M29.8083 38.6667C33.351 38.5857 35.4203 38.2473 36.8341 36.8335C38.2479 35.4196 38.5863 33.3504 38.6673 29.8077M22.193 38.6667C18.6503 38.5857 16.581 38.2473 15.1672 36.8335C13.7534 35.4196 13.415 33.3504 13.334 29.8077"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M20.6677 20.6667H20.6797"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M31.3337 31.3334H31.3457"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M20.668 31.3334L31.3346 20.6667"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_822_21173"
+          x1="26"
+          y1="0"
+          x2="26"
+          y2="52"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#80291A" />
+          <stop offset="1" stop-color="#2B0E08" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
+export const BenfitsSummaryUpdatedIcon = ({
+  width = "12",
+  height = "12",
+  color = "white",
+}: ISvgProp) => {
+  console.log(color);
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 52 52"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        width="52"
+        height="52"
+        rx="26"
+        fill="url(#paint0_linear_822_7337)"
+      />
+      <path
+        d="M22.193 13.3334C18.6503 13.4144 16.581 13.7528 15.1672 15.1666C13.7534 16.5804 13.415 18.6497 13.334 22.1924M29.8083 13.3334C33.351 13.4144 35.4203 13.7528 36.8341 15.1666C38.2479 16.5804 38.5863 18.6497 38.6673 22.1924M29.8083 38.6667C33.351 38.5857 35.4203 38.2473 36.8341 36.8335C38.2479 35.4196 38.5863 33.3504 38.6673 29.8077M22.193 38.6667C18.6503 38.5857 16.581 38.2473 15.1672 36.8335C13.7534 35.4196 13.415 33.3504 13.334 29.8077"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M20.6677 20.6667H20.6797"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M31.3337 31.3334H31.3457"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M20.668 31.3334L31.3346 20.6667"
+        stroke="white"
+        stroke-opacity="0.87"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_822_7337"
+          x1="26"
+          y1="0"
+          x2="26"
+          y2="52"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#E08335" />
+          <stop offset="1" stop-color="#B46625" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
 export const CrossIcon = ({
   width = "12",
   height = "12",

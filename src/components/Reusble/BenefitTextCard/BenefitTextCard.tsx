@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './BenefitTextCard.module.css';
 
-export type BenefitTextCardVariant = 'default' | 'updated' | 'discarded';
+export type BenefitTextCardVariant = 'default' | 'updated' | 'discard';
 
 type Props = {
   title?: string;

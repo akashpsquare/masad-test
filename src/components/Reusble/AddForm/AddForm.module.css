@@ -3,6 +3,8 @@
   --shadow-one: 2px 4px 30px 0px #00000066;
   --backdrop-filter-one: blur(120px);
   --primary-color: #4b180f;
+  --discard-color: #A80000;
+  --updated-color: #E08335;
 }
 
 .addForm_box {
@@ -45,6 +47,14 @@
   flex-direction: column;
   justify-content: flex-start;
   color: var(--primary-color);
+}
+
+.addForm_head_content.addForm_head_content_discard{
+  color : var(--discard-color);
+}
+
+.addForm_head_content.addForm_head_content_edit{
+  color : var(--updated-color);
 }
 
 .addForm_head_content h4 {

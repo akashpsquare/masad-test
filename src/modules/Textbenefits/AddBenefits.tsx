@@ -1,23 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AddForm from "../../components/Reusble/AddForm/AddForm";
 import { BenefitTabs } from "../../components/Reusble/BenefitTabs/BenefitTabs";
 import { BenefitTextCard } from "../../components/Reusble/BenefitTextCard/BenefitTextCard";
+import { generateUniqueId } from "../../functions/functions";
 
 export type Benefit = {
-  id: number;
+  id: string;
   text: string;
-  deleted: boolean;
-  type: "Recent" | "Existing";
+  isDeleted?: boolean;
+  isUpdated?: boolean;
 };
 
 const AddBenefits = () => {
   const [open, setOpen] = React.useState(false);
-  const [existingBenefits, setExistingBenefits] = React.useState<Benefit[]>([]);
-  const [benefitDetails, setBenefitDetails] = React.useState<Benefit[]>([]);
-  const [editingId, setEditingId] = React.useState<number | null>(null);
+  const [copyExistingBenefitsData, setCopyExistingBenefitsData] =
+    React.useState<Benefit[]>([]);
+  const [initialExitingbenefitData, setInitialExitingbenefitData] =
+    React.useState<Benefit[]>([]);
+  const [recentBenefitsData, setRecentBenefitsData] = React.useState<Benefit[]>(
+    []
+  );
+  const [editingId, setEditingId] = React.useState<string | null>(null);
   const [benefitText, setBenefitText] = React.useState("");
   const [isSummary, setIsSummary] = React.useState(false);
   const [isDiscard, setIsDiscard] = React.useState(false);
+
+  useEffect(() => {
+    // Fetch existing benefits data from local storage when the component mounts
+    if (open) {
+      const storedBenefits = localStorage.getItem("copyExistingBenefitsData");
+      if (storedBenefits) {
+        const parsedBenefits: Benefit[] = JSON.parse(storedBenefits).map(
+          (benefit: Benefit) => ({ ...benefit, isDeleted: false })
+        );
+        setCopyExistingBenefitsData(parsedBenefits);
+        setInitialExitingbenefitData(parsedBenefits);
+      }
+    }
+  }, [open]);
 
   // Function to handle the Enter key press
   // This function is called when the Enter key is pressed in the input field
@@ -35,27 +55,28 @@ const AddBenefits = () => {
       // If editing an existing benefit, update it
       // Otherwise, add a new benefit
       if (editingId) {
-        setBenefitDetails((prev) =>
+        setRecentBenefitsData((prev) =>
           prev.map((b) =>
             b.id === editingId ? { ...b, text: benefitText } : b
           )
         );
 
-        setExistingBenefits((prev) =>
+        
+
+          const initialBenefitText = initialExitingbenefitData.find((b) => b.id === editingId)?.text;
+        setCopyExistingBenefitsData((prev) =>
           prev.map((b) =>
-            b.id === editingId ? { ...b, text: benefitText } : b
+            b.id === editingId ? { ...b, text: benefitText, isUpdated : initialBenefitText !== benefitText ? true : false } : b
           )
         );
         setEditingId(null);
       } else {
         // Add a new benefit
         const newBenefit: Benefit = {
-          id: existingBenefits.length + benefitDetails.length + 1,
+          id: generateUniqueId(16, ""),
           text: benefitText,
-          deleted: false,
-          type: "Recent",
         };
-        setBenefitDetails((prev) => [...prev, newBenefit]);
+        setRecentBenefitsData((prev) => [...prev, newBenefit]);
       }
       setBenefitText("");
     } else {
@@ -66,8 +87,10 @@ const AddBenefits = () => {
 
   const cancelHandler = () => {
     // Reset the state variables when the cancel button is clicked
-    // if(!benefitDetails && benefitDetails.length <  0 && !existingBenefits) {
-    if (benefitDetails.length <= 0 && existingBenefits.length <= 0) {
+    if (
+      recentBenefitsData.length <= 0 &&
+      copyExistingBenefitsData.length <= 0
+    ) {
       setOpen(false);
     } else {
       setBenefitText("");
@@ -77,17 +100,6 @@ const AddBenefits = () => {
   };
 
   const addBenefitsHandler = () => {
-    // This function is called when the "Add" button is clicked in the summary view
-    const benefits: Benefit[] = benefitDetails.map((benefit, i) => ({
-      ...benefit,
-      type: "Existing",
-    }));
-
-    // Set the existing benefits to the new benefits
-    setExistingBenefits((prev) => [...prev, ...benefits]);
-
-    // Reset the state variables
-    setBenefitDetails([]);
     setBenefitText("");
     setEditingId(null);
     setIsSummary(true);
@@ -102,7 +114,7 @@ const AddBenefits = () => {
   const discardHandler = () => {
     setOpen(false);
     setTimeout(() => {
-      setBenefitDetails([]);
+      setRecentBenefitsData([]);
       setIsDiscard(false);
     }, 1000); // Delay to allow the modal to close before resetting the state
   };
@@ -114,7 +126,14 @@ const AddBenefits = () => {
   const submitSummaryHandler = () => {
     // Handle the submission of the summary
     // This function is called when the "Save" button is clicked in the summary view
-    console.log("Summary submitted:", existingBenefits);
+    console.log("Summary submitted:", recentBenefitsData);
+    const newBenefits: Benefit[] = recentBenefitsData;
+    const oldBenefits: Benefit[] = []; // copyExistingBenefitsData.filter((benefit) => );
+    localStorage.setItem(
+      "copyExistingBenefitsData",
+      JSON.stringify([...newBenefits, ...oldBenefits])
+    );
+    setRecentBenefitsData([]);
     setIsSummary(false);
     setOpen(false);
   };
@@ -137,9 +156,13 @@ const AddBenefits = () => {
 
       <AddForm
         open={open}
-        label={isDiscard ? "Discard" : isSummary ? "Summary" : "Add"}
+        isSummary={isSummary}
+        setSummary={setIsSummary}
+        isDiscard={isDiscard}
+        setDiscard={setIsDiscard}
+        label={"Add"}
         headingLabel="Benefits"
-        btn1Label={isDiscard ? "Back" : isSummary ? "Back" : "Cancel"}
+        btn1Label={"Cancel"}
         btn1Handler={
           isDiscard
             ? backDiscardHandler
@@ -247,12 +270,12 @@ const AddBenefits = () => {
                 height: "100%",
               }}
             >
-              {benefitDetails.length > 0 && (
+              {recentBenefitsData.length > 0 && (
                 <BenefitTabs
-                  benefits={benefitDetails}
+                  benefits={recentBenefitsData}
                   type="Recent"
-                  onChange={(updated: any) => setBenefitDetails(updated)}
-                  editHandler={(id, text) => {
+                  onChange={(updated: any) => setRecentBenefitsData(updated)}
+                  editHandler={(id: string, text: string) => {
                     setEditingId(id);
                     setBenefitText(text);
                   }}
@@ -260,11 +283,13 @@ const AddBenefits = () => {
                 />
               )}
 
-              {existingBenefits.length > 0 && (
+              {copyExistingBenefitsData.length > 0 && (
                 <BenefitTabs
-                  benefits={existingBenefits}
+                  benefits={copyExistingBenefitsData}
                   type="Existing"
-                  onChange={(updated: any) => setExistingBenefits(updated)}
+                  onChange={(updated: any) =>
+                    setCopyExistingBenefitsData(updated)
+                  }
                   editHandler={(id, text) => {
                     setEditingId(id);
                     setBenefitText(text);
@@ -278,17 +303,57 @@ const AddBenefits = () => {
 
         {!isSummary && isDiscard && (
           <div style={{ marginTop: "20px" }}>
-            {benefitDetails.map((benefit) => (
-              <BenefitTextCard key={benefit.id} text={benefit.text} />
+            {recentBenefitsData.map((benefit) => (
+              <BenefitTextCard
+                key={benefit.id}
+                text={benefit.text}
+                variant="discard"
+              />
             ))}
           </div>
         )}
 
+        {/* {isSummary && !isDiscard && (
+          <div style={{ marginTop: "20px" }}>
+            {[...recentBenefitsData, ...copyExistingBenefitsData].map(
+              (benefit) => {
+                const isDeleted: Boolean = copyExistingBenefitsData.find(
+                  (b) => b.id === benefit.id
+                )
+                  ? false
+                  : true;
+                const isUpdated: Boolean = initialExitingbenefitData.find(
+                  (b) => b.id === benefit.id
+                )
+                  ? true
+                  : false;
+                return (
+                  <BenefitTextCard
+                    key={benefit.id}
+                    text={benefit.text}
+                    variant={
+                      isDeleted ? "discard" : isUpdated ? "updated" : "default"
+                    }
+                  />
+                );
+              }
+            )}
+          </div>
+        )} */}
+
         {isSummary && !isDiscard && (
           <div style={{ marginTop: "20px" }}>
-            {existingBenefits.map((benefit) => (
-              <BenefitTextCard key={benefit.id} text={benefit.text} />
-            ))}
+            {[...recentBenefitsData, ...copyExistingBenefitsData].map(
+              (benefit) => (
+                <BenefitTextCard
+                  key={benefit.id}
+                  text={benefit.text}
+                  variant={
+                    benefit.isDeleted ? "discard" : benefit.isUpdated ? "updated" : "default"
+                  }
+                />
+              )
+            )}
           </div>
         )}
       </AddForm>
