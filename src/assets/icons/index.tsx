@@ -119,7 +119,7 @@ export const BenfitsDiscardIcon = ({
   height = "12",
   color = "white",
 }: ISvgProp) => {
-  console.log(color);
+  
   return (
     <svg
       width={width}
@@ -187,7 +187,6 @@ export const BenfitsSummaryIcon = ({
   height = "12",
   color = "white",
 }: ISvgProp) => {
-  console.log(color);
   return (
     <svg
       width={width}
@@ -255,7 +254,7 @@ export const BenfitsSummaryUpdatedIcon = ({
   height = "12",
   color = "white",
 }: ISvgProp) => {
-  console.log(color);
+  
   return (
     <svg
       width={width}
@@ -323,7 +322,7 @@ export const CrossIcon = ({
   height = "12",
   color = "white",
 }: ISvgProp) => {
-  console.log(color);
+  
   return (
     <svg
       width={width}
@@ -348,7 +347,7 @@ export const CrossButtonWithIcon = ({
   height = "12",
   color = "white",
 }: ISvgProp) => {
-  console.log(color);
+  
   return (
     <svg
       width={width}
@@ -470,7 +469,7 @@ export const UndoIcon = ({
   height = "12",
   color = "white",
 }: ISvgProp) => {
-  console.log(color);
+  
   return (
     <svg
       width={width}

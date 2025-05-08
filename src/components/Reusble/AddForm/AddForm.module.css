@@ -49,11 +49,11 @@
   color: var(--primary-color);
 }
 
-.addForm_head_content.addForm_head_content_discard{
+.addForm_head_content.addForm_head_content_discard, .addForm_head_content_deleted {
   color : var(--discard-color);
 }
 
-.addForm_head_content.addForm_head_content_edit{
+.addForm_head_content.addForm_head_content_edit, .addForm_head_content_updated{
   color : var(--updated-color);
 }
 
@@ -99,6 +99,9 @@
   height : calc(100% - 11.025rem);
   padding: 0px 1.5rem 0px 1.5rem;
   margin-top: 2.5rem;
+  overflow: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 .addForm_footer {

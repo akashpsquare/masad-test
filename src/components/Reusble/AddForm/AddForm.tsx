@@ -12,6 +12,8 @@ export interface AddFormState {
   open: boolean;
   label?: string;
   key: string;
+  isUpdated?: boolean;
+  isDeleted?: boolean;
   headingLabel: string;
   status?: "update" | "delete" | "default";
   summaryContent: string;
@@ -41,6 +43,8 @@ const AddForm = ({
   open,
   isSummary = false,
   isDiscard = false,
+  isUpdated = false,
+  isDeleted = false,
   setDiscard,
   setSummary,
   label = "Add",
@@ -55,6 +59,8 @@ const AddForm = ({
   btn2Handler,
 }: AddFormState) => {
 
+  // console.log("AddForm rendered", {isUpdated, isDeleted, });
+
   return (
     <div
       className={`${styles.addForm_box} ${open ? styles.addForm_box_open : ""}`}
@@ -63,14 +69,23 @@ const AddForm = ({
         {isDiscard ? (
           <BenfitsDiscardIcon width="52px" height="52px" />
         ) : isSummary ? (
-          <BenfitsSummaryIcon width="52px" height="52px" />
+          isUpdated ? (
+            <BenfitsSummaryUpdatedIcon width="52px" height="52px" />
+          ) : (
+            <BenfitsSummaryIcon width="52px" height="52px" />
+          )
         ) : (
           <Icon width="52px" height="52px" />
         )}
         <div
-          className={`${styles.addForm_head_content} ${isDiscard ? styles.addForm_head_content_discard : isSummary ? styles.addForm_head_content_summary : ""}`}
+          className={`
+            ${styles.addForm_head_content} 
+            ${isDiscard ? styles.addForm_head_content_discard : isSummary ? styles.addForm_head_content_summary : ""}
+            ${isSummary && isUpdated ? styles.addForm_head_content_updated : ""}
+            ${isSummary && isDeleted ? styles.addForm_head_content_deleted : ""}
+            `}
         >
-          <h4 style={{ color: isDiscard ? "" : isSummary ? "" : "" }}>
+          <h4>
             {isDiscard ? "Discard" : isSummary ? "Summary" : label}
           </h4>
           <h3>{headingLabel}</h3>

@@ -3,13 +3,14 @@ import styles from "./BenefitTabs.module.css";
 import { DeleteIcon, UndoIcon } from "../../../assets/icons";
 import { Benefit } from "../../../modules/Textbenefits/AddBenefits";
 
-
 type IBenefitsTabProps = {
   type: "Recent" | "Existing";
   benefits: Benefit[];
   onChange: (updated: Benefit[]) => void;
   editId?: string | null;
   editHandler: (id: string, text: string) => void;
+  deletedIds?: Set<string>;
+  setDeletedIds?: (updater: (prev: Set<string>) => Set<string>) => void;
 };
 
 export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
@@ -17,32 +18,35 @@ export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
   benefits,
   onChange,
   editHandler,
+  deletedIds,
+  setDeletedIds,
   editId = null,
 }) => {
-
   const handleDelete = (id: string) => {
-    // Prevent deleting the benefit if it's being edited
-    // This check is to ensure that the delete action doesn't interfere with the edit action
-    if(editId && editId === id) return;
+    if (editId && editId === id) return;
 
-    console.log("Deleting benefit with id:", id);
-    // If the type is "Recent", remove the benefit from the list
-    // If the type is "Existing", mark it as deleted
+    // console.log("Deleting benefit with id:", id);
     if (type === "Recent") {
       onChange(benefits.filter((b) => b.id !== id));
     } else {
-      onChange(
-        benefits.map((b) =>
-          b.id === id ? { ...b, isDeleted: true } : b
-        )
-      );
+      // onChange(
+      //   benefits.map((b) =>
+      //     b.id === id ? { ...b, isDeleted: true } : b
+      //   )
+      // );
+      setDeletedIds?.(prev => new Set(prev).add(id));
     }
   };
 
-  // Function to handle undoing the delete action
-  // This will set the deleted property of the benefit back to false
   const handleUndo = (id: string) => {
-    onChange(benefits.map((b) => (b.id === id ? { ...b, isDeleted : false} : b)));
+    // onChange(
+    //   benefits.map((b) => (b.id === id ? { ...b, isDeleted: false } : b))
+    // );
+    setDeletedIds?.((prev: Set<string>) => {
+      const newSet = new Set(prev);
+      newSet.delete(id);
+      return newSet;
+    });
   };
 
   return (
@@ -54,12 +58,14 @@ export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
         </div>
 
         <div className={styles.benefitContainer}>
-          {benefits.map((b) => (
-            <div key={b.id} className={`${styles.benefitItem}`}>
+          {benefits.map((b) => {
+            const isDeleted = deletedIds?.has(b.id) 
+            return  (
+            <div key={b.id} className={`${styles.benefitItem} ${editId === b.id ? styles.selected : ""}`}>
               <span
                 className={styles.benefitText}
                 onClick={(e) => {
-                  if ((e.target as HTMLElement).tagName !== "BUTTON") {
+                  if (!isDeleted && (e.target as HTMLElement).tagName !== "BUTTON") {
                     editHandler(b.id, b.text);
                   }
                 }}
@@ -68,21 +74,21 @@ export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
               </span>
               <button
                 className={`${styles.iconBtn} ${
-                  b.isDeleted ? styles.undoBtn : styles.deleteBtn
+                  isDeleted ? styles.undoBtn : styles.deleteBtn
                 }`}
                 onClick={() =>
-                  b.isDeleted ? handleUndo(b.id) : handleDelete(b.id)
+                  isDeleted ? handleUndo(b.id) : handleDelete(b.id)
                 }
-                title={b.isDeleted ? "Undo" : "Delete"}
+                title={isDeleted ? "Undo" : "Delete"}
               >
-                {b.isDeleted ? (
+                {isDeleted ? (
                   <UndoIcon width="12" height="12" color="white" />
                 ) : (
                   <DeleteIcon width="12" height="12" color="#4B180F" />
                 )}
               </button>
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </>
