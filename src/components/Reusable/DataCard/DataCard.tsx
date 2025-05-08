@@ -74,7 +74,7 @@ const DataCard: FC= () => {
       message: "Save big on summer essentials",
       startTime: "10:00 AM",
       endTime: "10:00 PM",
-      startDate: "2025-06-01",
+      startDate: "4/april/2025",
       endDate: "2025-06-10",
       currency: "EUR",
       offerExpiry: "900",
@@ -86,7 +86,7 @@ const DataCard: FC= () => {
   const reminderdata = [{
     days: 7,
     time: "10:00 AM",
-    message: "helo this is reminder message",
+    message: "helo this is reminder message ojgopads fpojpf asdpofj pojsd fpoasdj podjpos sd jopisdjfapojfosid",
   }]
 
   return (

@@ -29,7 +29,10 @@
     background: rgba(255, 255, 255, 0.28);
 
 }
-
+.subheader_edit_button_icon{
+    all: unset;
+    cursor: pointer;
+}
 .subheader_member{
 display: flex;
 align-items: center;

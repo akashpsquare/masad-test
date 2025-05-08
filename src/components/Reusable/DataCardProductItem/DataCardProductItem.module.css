@@ -1,54 +1,50 @@
 .datacard_grid_item {
-    display: flex;
-    height: 64px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 16px;
-    padding: 8px;
-    transition: box-shadow 0.2s ease;
-    color: black;
-    gap: 6px;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  transition: box-shadow 0.2s ease;
+  color: black;
+  gap: 0.375rem;
+}
 
-  }
-  
-  .datacard_grid_item h4,
-  .datacard_grid_item p {
-    margin: 0;
-  }
-  .datacard_grid_item_header{
-    font-family: "Lexend Deca", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 0%;
-    text-align: center;
-    
-  }
-  
-  .datacard_grid_item_value {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 0px;
-    width: 100%;
-    background: rgba(237, 232, 231, 1);
-    border-radius: 30px;
-    font-family: Lexend Deca;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #4B180F;
-    
-    
-  }
+.datacard_grid_item h4,
+.datacard_grid_item p {
+  margin: 0;
+}
 
-  
-  .datacard_grid_item:hover {
-    box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
-    scale: 1;
-  }
+.datacard_grid_item_header {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.datacard_grid_item_value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0;
+  width: 100%;
+  background: rgba(237, 232, 231, 1);
+  border-radius: 1.875rem;
+  font-family: Lexend Deca;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #4B180F;
+}
+
+.datacard_grid_item:hover {
+  box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
+  scale: 1;
+}

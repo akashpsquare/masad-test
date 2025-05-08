@@ -19,6 +19,6 @@ export const Primary: Story = {
     memberType: 'yellow',
     price: 22,
     memberIcon: membership,
-editIcon: edit,
+    editIcon: edit, 
   },
 };

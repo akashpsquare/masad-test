@@ -16,3 +16,4 @@ export const Primary: Story = {
     label: 'Benefit'
   },
 };
+

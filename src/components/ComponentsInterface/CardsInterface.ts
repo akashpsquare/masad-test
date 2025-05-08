@@ -20,7 +20,7 @@ export interface InputProps {
   placeholder?: string,
   name: string,
   required?: boolean,
-  customCss?: string,
+  customStyle?: string,
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
@@ -112,6 +112,7 @@ export interface SubHeaderProps {
   price: number;
   editIcon: string;
   memberIcon: string;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
 export interface BenefitContainerProps {

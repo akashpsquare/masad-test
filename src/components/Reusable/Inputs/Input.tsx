@@ -8,7 +8,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   name,
   required = false,
-  customCss = "",
+  customStyle = "",
   type,
   onChange,
 }) => {
@@ -38,7 +38,7 @@ const Input: React.FC<InputProps> = ({
           ref={inputref}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className={`${styles.input} ${customCss}`}
+          className={`${styles.input} ${customStyle}`}
           type={type}
           value={value}
           required={required}

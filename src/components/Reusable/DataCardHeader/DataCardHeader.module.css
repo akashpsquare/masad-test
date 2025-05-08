@@ -1,80 +1,76 @@
 .datacard_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Lexend Deca", sans-serif;
-    color: #4B180F;
-
-  }
-
-  .datacard_datahead_wrapper{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-
-  .datacard_datahead{
-    font-family: Lexend Deca;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: #4B180F;
-
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Lexend Deca", sans-serif;
+  color: #4B180F;
 }
-  .datacard_count_value{
-    background: linear-gradient(163.28deg, #80291A 10%, #2B0E08 91.55%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 100px;
-   width: 28px;
-   height: 28px;
-   color: rgb(255, 255, 255);
-   font-family: Lexend Deca;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    text-align: center;
 
-    
-  }
-  .header_Button {
-    background-color: transparent; 
-    border: none; 
-    box-shadow: none; 
-    padding: 0; 
-    cursor: pointer; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .datacard_header_tag{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #4B180F;
-    border-radius: 50px;
-    color: #4B180F;
-    padding: 0px 16px;
-  
-  }
-.datacard_tag{
-  padding: 4px 12px;
+.datacard_datahead_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.datacard_datahead {
+  font-family: Lexend Deca;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #4B180F;
+}
+
+.datacard_count_value {
+  background: linear-gradient(163.28deg, #80291A 10%, #2B0E08 91.55%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 100px;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: rgb(255, 255, 255);
+  font-family: Lexend Deca;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.header_Button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.datacard_header_tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4B180F;
+  border-radius: 50px;
+  color: #4B180F;
+  padding: 0 1rem;
+}
+
+.datacard_tag {
+  padding: 0.25rem 0.75rem;
   margin: 0;
-font-size: 12px;
-font-weight: bold;
-
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
-
-.datacard_header_form_title{
-  font-size: 14px;
+.datacard_header_form_title {
+  font-size: 0.875rem;
 }
-.datacard_form_datahead{
-  font-size: 27px
+
+.datacard_form_datahead {
+  font-size: 1.6875rem;
 }
