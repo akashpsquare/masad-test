@@ -11,23 +11,20 @@ const Input: React.FC<InputProps> = ({
   customStyle = "",
   type,
   onChange,
+
 }) => {
   const inputref = useRef<HTMLInputElement>(null);
-  const [    , setIsFocused] = React.useState(false);
   const [isEmpty, setIsEmpty] = React.useState<boolean>(true);
 
   useEffect(() => {
     setIsEmpty(!(inputref.current?.value?.trim()));
   }, [value]);
-
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(!isEmpty);
-  };
-
+  
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  if (onChange) {
+    onChange(e);
+  }
+};
   return (
     <div
       className={`${styles.input_container} ${!isEmpty ? styles.focused : ""}`}
@@ -36,13 +33,12 @@ const Input: React.FC<InputProps> = ({
         <input
           name={name}
           ref={inputref}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
           className={`${styles.input} ${customStyle}`}
           type={type}
           value={value}
           required={required}
-          onChange={onChange}
+          onChange={handleChange}
+          
         />
         {label && (
           <span
