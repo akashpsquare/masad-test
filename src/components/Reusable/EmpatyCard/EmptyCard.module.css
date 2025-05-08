@@ -1,0 +1,24 @@
+.empty_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptycard_add_label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; 
+}
+
+.card_wrapper_label {
+  color: rgba(75, 24, 15, 1);
+  font-size: 16px;
+  font-weight: 500; 
+}
+
+.empty_card_icon img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

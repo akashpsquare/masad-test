@@ -1,0 +1,122 @@
+
+
+
+
+/* @keyframes fadeInLink {
+    from {
+        opacity: 0;
+        
+    }
+    to {
+        opacity: 1;
+    }
+} */
+
+.sidebar{
+    list-style: none;
+    font-family: "Lexend Deca", sans-serif;
+}
+.sidebar_li {
+    position: relative;
+    width: 312px;
+    padding: 18px 16px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition:  opacity 0.3s ease;
+    opacity: 0.8; 
+}
+
+.sidebar_li.active {
+    background-color: #fff;
+    border-radius: 50px 0px 0px 50px;
+    margin: 8px 0px;
+    opacity: 1; 
+    transition:  opacity 0.3s ease; 
+}
+.sidebar_li.active .sidebar_container_link {
+ color: rgba(75, 24, 15, 1);
+  }
+  .sidebar_li.active .sicebar_icon {
+    color: rgba(75, 24, 15, 1);
+  }
+.sidebar_li:first-child{
+    margin-top: 0;
+}
+.sidebar_li:last-child{
+    border-radius: 20px;
+    margin-bottom: 0;
+
+}
+
+
+.sidebar_extra_div{
+    position: absolute;
+    top: 0px;
+    left: 301px;
+    bottom: 0px;
+    width: 48px;
+    height: 57px;  
+    background-color: #fff;
+}
+.sidebar_li.active::before {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    top: 60px;
+    right: -16px;
+    height: 80px;
+    width: 38px;  
+    border: none;
+    border-top-right-radius: 77px;
+    border-bottom-right-radius: 0px;
+    z-index: 999;
+    box-shadow: 0 -45px 0 0 #fff;
+    
+}
+
+.sidebar_li.active::after {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    z-index: 44;
+    bottom: 100%;
+    right: -16px;
+    height: 87px;
+    width: 45px;
+    border: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 44px 0 0 #fff;
+}
+
+
+.sidebar_li:first-child.active::after {
+    content: none; 
+}
+.sidebar_li:first-child.active::before{
+    top: 56px;
+    
+}
+
+/* in case last elent in div */
+
+/* .sidebar_li:last-child.active::before {
+    content: none; 
+}
+.sidebar_li:last-child.active{
+  margin-bottom: 0;
+} */
+
+.sidebar_container_link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    display: block;
+}
+
+.icon_text_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

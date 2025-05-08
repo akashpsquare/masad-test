@@ -1,0 +1,31 @@
+.messageContiner_Wrapper{
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 12px;
+    border: 1px solid rgba(237, 232, 231, 1);
+    box-shadow: 0.5px 1px 6px 0px rgba(0, 0, 0, 0.08);
+    gap: 8px;
+}
+.messageContainer_header{
+  font-family: Lexend Deca;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 0.87);
+
+}
+.messageContainer_para{
+  font-family: Lexend Deca;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+letter-spacing: 0%;
+}
+
+.customStyle{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

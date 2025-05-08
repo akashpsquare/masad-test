@@ -12,7 +12,6 @@ const popupSlice = createSlice({
   reducers: {
     openPopup(state, action: PayloadAction<string>) {
       state.popups = {};
-
       state.popups[action.payload] = true;
     },
     closePopup(state, action: PayloadAction<string>) {
