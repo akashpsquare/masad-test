@@ -1,0 +1,52 @@
+.subheader_container{
+    font-family: "Lexend Deca", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.subheader_label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    color: rgba(75, 24, 15, 1);
+    background: rgba(237, 232, 231, 1);
+    width: 241px;
+    height: 74px;
+    border-radius: 36px;
+    padding: 23px 16px;
+}
+.subheader_description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 74px;
+    font-size: 16px;
+    border-radius: 36px;
+    gap: 10px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.28);
+
+}
+.subheader_edit_button_icon{
+    all: unset;
+    cursor: pointer;
+}
+.subheader_member{
+display: flex;
+align-items: center;
+    width: 386;
+height: 74px;
+border-radius: 36px;
+gap: 10px;
+padding: 16px;
+background: rgba(255, 255, 255, 0.28);
+
+}
+.subheader_mertype_data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
