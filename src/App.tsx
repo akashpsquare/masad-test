@@ -12,5 +12,4 @@ function App() {
     <AddBenefits />
   </>;
 }
-
 export default App;

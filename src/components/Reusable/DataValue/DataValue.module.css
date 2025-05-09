@@ -1,0 +1,80 @@
+.datavalue_data_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.datavalue_data {
+  font-family: Lexend Deca;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.datavalue_value_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9.25rem;
+  height: 1.5rem;
+  border-radius: 0.625rem;
+  padding: 0.25rem;
+  color: rgba(75, 24, 15, 1);
+  background: rgba(228, 220, 219, 1);
+  gap: 0.5rem;
+}
+
+.datavalue_value {
+  font-family: Lexend Deca;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.datavalue_value_outer {
+  font-family: Lexend Deca;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.datavalue_header {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.datavalue_value {
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.custom_style {
+  width: 7.25rem;
+  height: 2.1875rem;
+}
+
+
+.datavalue_reminder_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 0.75rem;
+  width: 180px;
+  border-radius: 0.625rem;
+  padding: 0.25rem;
+  background: rgba(237, 232, 231, 1);
+  color: rgba(75, 24, 15, 1);
+}
+
