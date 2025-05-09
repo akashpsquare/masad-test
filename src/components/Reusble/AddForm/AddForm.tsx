@@ -7,6 +7,7 @@ import {
   BenfitsSummaryUpdatedIcon,
   BenfitsSummaryIcon,
 } from "../../../assets/icons";
+import Button from "../../Reusable/Buttons/Buttons";
 
 export interface AddFormState {
   open: boolean;
@@ -54,9 +55,9 @@ const AddForm = ({
   rightButtonHandler,
   children: Children,
   btn1Label = "Cancel",
-  btn1Handler,
+  btn1Handler = () => {},
   btn2Label = "Add",
-  btn2Handler,
+  btn2Handler = () => {},
 }: AddFormState) => {
 
   // console.log("AddForm rendered", {isUpdated, isDeleted, });
@@ -104,13 +105,30 @@ const AddForm = ({
       <div className={styles.addForm_content}>{Children}</div>
 
       <div className={`${styles.addForm_footer}`}>
-        <button onClick={btn1Handler} className={`${styles.btn_outline}`}>
+        {/* <button onClick={btn1Handler} className={`${styles.btn_outline}`}>
           {isDiscard ? "Back" : isSummary ? "Back" : btn1Label}
-        </button>
+        </button> */}
+        <Button 
+          label={isDiscard ? "Back" : isSummary ? "Back" : btn1Label}
+          variant="secondary"
+          onClick={btn1Handler}
+          key={"addForm-btn1"}
+          dimensionH={"42px"}
+          dimensionW={"140px"}
+        />
 
-        <button onClick={btn2Handler} className={`${styles.btn_contained}`}>
+        <Button 
+          label={isDiscard ? "Discard" : isSummary ? "Submit" : btn2Label}
+          variant="primary"
+          onClick={btn2Handler}
+          key={"addForm-btn2"}
+          dimensionH={"42px"}
+          dimensionW={"140px"}
+        />
+
+        {/* <button onClick={btn2Handler} className={`${styles.btn_contained}`}>
           {isDiscard ? "Discard" : isSummary ? "Submit" : btn2Label}
-        </button>
+        </button> */}
       </div>
     </div>
   );

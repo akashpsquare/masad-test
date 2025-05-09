@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import AddForm from "../../components/Reusble/AddForm/AddForm";
 import { BenefitTabs } from "../../components/Reusble/BenefitTabs/BenefitTabs";
 import { BenefitTextCard } from "../../components/Reusble/BenefitTextCard/BenefitTextCard";
 import { generateUniqueId } from "../../functions/functions";
+import BenefitChildren from "../../components/Common/MemberShip/BenefitChildren/BenefitChildren";
 
 export type Benefit = {
   id: string;
@@ -25,8 +26,6 @@ const AddBenefits = () => {
 
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  // console.log("AddBenefits rendered", editedData);
-
   useEffect(() => {
     if (open) {
       const response = localStorage.getItem("apiBenefitsData");
@@ -38,7 +37,6 @@ const AddBenefits = () => {
     }
   }, [open]);
 
-
   const keyDownHandler = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -48,10 +46,15 @@ const AddBenefits = () => {
 
   const isBenefitTextUpdated = (item: Benefit) => {
     const original = apiData.find((i) => i.id === item.id);
-    return original && original.text !== item.text;
+    return original && original.text !== item.text ? true : false;
   };
 
-  const saveBenefitsHandler = () => {
+  const saveBenefitsHandler = (
+    benefitText: any,
+    editingId: any,
+    setBenefitText : any,
+    setEditingId : any,
+  ) => {
     if (benefitText && benefitText.trim() !== "") {
       if (editingId) {
         setRecentBenefitsData((prev) =>
@@ -88,7 +91,6 @@ const AddBenefits = () => {
     inputRef.current?.focus();
   };
 
-
   const isUpdatedAnyExitingBenefit = useMemo(() => {
     const isUpdatedAnytext = apiData.some((item) => {
       const original = editedData.find((i) => i.id === item.id);
@@ -103,11 +105,13 @@ const AddBenefits = () => {
     [deletedIds, isSummary, isDiscard]
   );
 
-  
-  
   const cancelHandler = () => {
     // Reset the state variables when the cancel button is clicked
-    if (recentBenefitsData.length > 0 || (editedData.length > 0 && isUpdatedAnyExitingBenefit || isDeletedAnyExitingBenefit)) {
+    if (
+      recentBenefitsData.length > 0 ||
+      (editedData.length > 0 && isUpdatedAnyExitingBenefit) ||
+      isDeletedAnyExitingBenefit
+    ) {
       setBenefitText("");
       setEditingId(null);
       setIsDiscard(true);
@@ -117,11 +121,15 @@ const AddBenefits = () => {
   };
 
   const addBenefitsHandler = () => {
-    if(recentBenefitsData.length > 0 || (editedData.length > 0 && isUpdatedAnyExitingBenefit || isDeletedAnyExitingBenefit)) {
+    if (
+      recentBenefitsData.length > 0 ||
+      (editedData.length > 0 && isUpdatedAnyExitingBenefit) ||
+      isDeletedAnyExitingBenefit
+    ) {
       setBenefitText("");
       setEditingId(null);
       setIsSummary(true);
-    }else{
+    } else {
       alert("Please add or update a benefit detail.");
     }
   };
@@ -136,7 +144,7 @@ const AddBenefits = () => {
       setRecentBenefitsData([]);
       setIsDiscard(false);
       setDeletedIds(new Set());
-    }, 1000); 
+    }, 1000);
   };
 
   const backSummaryHandler = () => {
@@ -302,7 +310,7 @@ const AddBenefits = () => {
               {recentBenefitsData.length > 0 && (
                 <BenefitTabs
                   benefits={recentBenefitsData}
-                  type="Recent"
+                  headLabel="Recent"
                   onChange={(updated: any) => setRecentBenefitsData(updated)}
                   editHandler={editHandler}
                   editId={editingId}
@@ -312,7 +320,7 @@ const AddBenefits = () => {
               {editedData.length > 0 && (
                 <BenefitTabs
                   benefits={editedData}
-                  type="Existing"
+                  headLabel="Existing"
                   onChange={(updated: any) => setEditedData(updated)}
                   editHandler={editHandler}
                   editId={editingId}
@@ -329,11 +337,9 @@ const AddBenefits = () => {
             {[
               ...recentBenefitsData,
               ...editedData.filter(
-                (b) =>
-                  deletedIds.has(b.id) ||
-                  apiData.find(
-                    (initial) => initial.id === b.id && initial.text !== b.text
-                  )
+                (b) => deletedIds.has(b.id) || isBenefitTextUpdated(b) // apiData.find(
+                //   (initial) => initial.id === b.id && initial.text !== b.text
+                // )
               ),
             ].map((benefit) => (
               <BenefitTextCard
@@ -362,6 +368,15 @@ const AddBenefits = () => {
             ))}
           </div>
         )}
+
+        <BenefitChildren
+          isDiscard={isDiscard}
+          isSummary={isSummary}
+          recentBenefitsData={recentBenefitsData}
+          editedData={editedData}
+          isBenefitTextUpdated={isBenefitTextUpdated}
+          saveBenefitsHandler={saveBenefitsHandler}
+        />
       </AddForm>
     </div>
   );

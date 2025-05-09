@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "./BenefitTabs.module.css";
 import { DeleteIcon, UndoIcon } from "../../../assets/icons";
-import { Benefit } from "../../../modules/Textbenefits/AddBenefits";
+import { Benefit } from "../../../modules/Testbenefits/AddBenefits";
 
 type IBenefitsTabProps = {
-  type: "Recent" | "Existing";
+  headLabel: "Recent" | "Existing";
   benefits: Benefit[];
   onChange: (updated: Benefit[]) => void;
   editId?: string | null;
@@ -14,7 +14,7 @@ type IBenefitsTabProps = {
 };
 
 export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
-  type,
+  headLabel = "Recent",
   benefits,
   onChange,
   editHandler,
@@ -26,7 +26,7 @@ export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
     if (editId && editId === id) return;
 
     // console.log("Deleting benefit with id:", id);
-    if (type === "Recent") {
+    if (headLabel === "Recent") {
       onChange(benefits.filter((b) => b.id !== id));
     } else {
       // onChange(
@@ -53,7 +53,7 @@ export const BenefitTabs: React.FC<IBenefitsTabProps> = ({
     <>
       <div className={styles.wrapper}>
         <div className={styles.header}>
-          <span className={styles.typeLabel}>{type}</span>
+          <span className={styles.typeLabel || styles.headLabel}>{headLabel}</span>
           <div className={styles.count}>{benefits.length}</div>
         </div>
 

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Service } from './../Reusable/DataCardBody/DataCardBody.stories';
 
 
@@ -22,6 +22,7 @@ export interface InputProps {
   required?: boolean,
   customStyle?: string,
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  inputRef?: React.Ref<HTMLInputElement> | null,
 }
 
 

@@ -11,13 +11,13 @@ const Input: React.FC<InputProps> = ({
   customStyle = "",
   type,
   onChange,
-
+  inputRef = null,
 }) => {
-  const inputref = useRef<HTMLInputElement>(null);
+  // const inputRef = useRef<HTMLInputElement>(null);
   const [isEmpty, setIsEmpty] = React.useState<boolean>(true);
 
   useEffect(() => {
-    setIsEmpty(!(inputref.current?.value?.trim()));
+    setIsEmpty(!(inputRef && 'current' in inputRef && inputRef.current?.value?.trim()));
   }, [value]);
   
 const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +32,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       <div className={`${styles.input_wrapper}`}>
         <input
           name={name}
-          ref={inputref}
+          ref={inputRef}
           className={`${styles.input} ${customStyle}`}
           type={type}
           value={value}

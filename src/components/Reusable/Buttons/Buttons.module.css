@@ -27,10 +27,11 @@
   background: linear-gradient(152.51deg, #762618 17.11%, #46170F 85.58%);
   border-radius: 100px;
 }
+
 .btn.secondary {
   color: rgba(128, 41, 26, 1);
   border-radius: 100px;
-  border: 1.5px solid;
+  border: 1.5px solid; /* border size 1.2px */
   border-top-color: rgba(128, 41, 26, 1);
   border-bottom-color: rgba(43, 14, 8, 1);
   border-right-color: rgba(43, 14, 8, 1);
